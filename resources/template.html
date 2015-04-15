@@ -10,6 +10,7 @@
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/carousel.css" rel="stylesheet">
         <!-- Importare qui stile di questa pagina per fare override -->
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,10 +28,16 @@
             .navbar-default .navbar-brand { color: rgb(255, 255, 255) }
             .navbar-default .navbar-brand:visited { color: rgb(255, 255, 255) }
             .navbar-default .navbar-brand:hover { color: rgb(255, 255, 255) }
-
+            
+            <!--Rispettare ordine di questi altrimenti non vanno-->
             .navbar-default .navbar-nav>li>a { color: rgb(255, 255, 255) }
+            
+            .navbar-default .navbar-nav .open .dropdown-menu>li>a { color: rgb(255, 255, 255) }
             .navbar-default .navbar-nav>li>a:visited { color: rgb(255, 255, 255) }
             .navbar-default .navbar-nav>li>a:hover { color: rgb(255, 236, 19) }
+            
+            .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover { color: rgb(255, 236, 19) }
+            
 
             .navbar-default .navbar-nav>.active>a { color: rgb(255, 255, 255); background-color: rgb(255, 236, 19) }
             .navbar-default .navbar-nav>.active>a:visited { color: rgb(0, 0, 0); background-color: rgb(255, 236, 19) }
@@ -43,6 +50,23 @@
             .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover { background-color: rgb(29, 27, 16); color: rgb(255, 236, 19) }
             .dropdown-menu>li>a { color: rgb(255, 255, 255) }
 
+            <!--Bottone navbar collapsed-->
+            .navbar-default .navbar-toggle { border-color: rgb(255, 255, 255) }
+            .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover { background-color: rgb(29, 27, 16) }
+            .navbar-default .navbar-toggle .icon-bar { background-color: rgb(255, 255, 255) }
+            
+            <!--Dropdown del Bottone navbar collapsed -->
+            .carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+  max-width: none;
+}
+            
+            
+            
         </style>
 
     </head>
@@ -104,6 +128,39 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        
+        <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="img/prova.jpg" class="adattare">
+        </div>
+        <div class="item">
+          <img src="img/prova.jpg" class="adattare">
+        </div>
+        <div class="item">
+          <img src="img/prova.jpg" class="adattare">
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+        
+        
+        
 
         <h1 style="color: rgb(255, 236, 19)">Titolo</h1>
 
