@@ -104,6 +104,22 @@
                 background-image: none;
             }
 
+            /* Back to Top button style */
+            .backtotopdiv{
+                z-index: 999;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .backtotop{
+                color: rgb(255, 255, 255);
+            }
+
+            .backtotop:hover{
+                color: rgb(255, 236, 19);
+            }
+
             /* Footer style */
             .footer { background-color: rgb(0, 0, 0); margin-top: 30px }
 
@@ -247,6 +263,13 @@
             </div>
         </div>
 
+        <div id="toTop" class="backtotopdiv">
+            <a class="backtotop" href="#top">
+                <span class="glyphicon glyphicon-menu-up">
+                </span>
+            </a>
+        </div>
+
         <footer class="footer">
             <div class="container">
                 <p class="text-muted">@ 2015 Big Gym - created by Paolo Guglielmino, Daniele Marangoni, Matteo Montalcini</p>
@@ -259,16 +282,25 @@
         <script src="js/bootstrap.min.js"></script>
         <script>
 
-            //Stops the breadcrumbs when it reach the top of the screen.
+            $("#toTop").hide();
+
             var breadPosition = $("#breaddiv").position();
             var x = breadPosition.top - 50;
             $(window).scroll(function() {
+                //Stops the breadcrumbs when it reach the top of the screen.
                 var posizione = $(window).scrollTop();
                 if(posizione>x){
                     $("#breaddiv").addClass("breadcrumbsfixeddiv");
                 }
                 if(posizione<=x){
                     $("#breaddiv").removeClass("breadcrumbsfixeddiv");
+                }
+
+                //Hide or Show back to top link.
+                if ($(this).scrollTop()) {
+                    $("#toTop").show();
+                } else {
+                    $("#toTop").hide();
                 }
             });
 
