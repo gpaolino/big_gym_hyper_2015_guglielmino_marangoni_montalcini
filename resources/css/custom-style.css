@@ -83,6 +83,22 @@ body { background-color: rgb(40, 40, 40); color: rgb(199, 199, 199) }
     background-image: none;
 }
 
+/* List group items style */
+a.list-group-item { color: rgb(255, 255, 255); background-color: rgb(29, 27, 16); border-color: rgb(29, 27, 16) }
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover { color: rgb(0, 0, 0); background-color: rgb(255, 236, 19); border-color: rgb(29, 27, 16)}
+a.list-group-item:focus, a.list-group-item:hover { color: rgb(255, 236, 19); background-color: rgb(29, 27, 16) }
+.list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-color: rgb(255, 236, 19);
+}
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-color: rgb(255, 236, 19);
+}
+
 /* Back to Top button style */
 .backtotopdiv{
     z-index: 999;

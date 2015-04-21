@@ -25,10 +25,10 @@
     <body id="page-top">
 
         <!-- Padding on the top of the page -->
-        <div class="top-space" style="width:100%; height: 90px"></div>
+        <div class="top-space" style="width:100%; height:90px"></div>
 
         <!-- NavBar fixed on the top -->
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top top-nav-collapse">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -83,7 +83,7 @@
         </nav>
 
         <!-- Breadcrumbs -->
-        <div id="breaddiv" class="breadcrumbsdiv">
+        <div id="breaddiv" class="breadcrumbsdiv breadcrumbsfixeddiv">
             <ol class="breadcrumb">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Library</a></li>
@@ -97,7 +97,7 @@
 
                 <div class="col-xs-12 col-sm-9">
                     <p class="pull-right visible-xs">
-                        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="offcanvas">Show menu</button>
                     </p>
                     <div class="jumbotron">
                         <h1>Hello, world!</h1>
@@ -122,9 +122,9 @@
 
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
                     <div class="list-group">
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
                         <a href="#" class="list-group-item active">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
-                        <a href="#" class="list-group-item">Link</a>
                         <a href="#" class="list-group-item">Link</a>
                         <a href="#" class="list-group-item">Link</a>
                         <a href="#" class="list-group-item">Link</a>
@@ -181,19 +181,7 @@
         <script>
 
             $("#toTop").hide();
-
-            var breadPosition = $("#breaddiv").position();
-            var x = breadPosition.top - 50;
             $(window).scroll(function() {
-                //Stops the breadcrumbs when it reach the top of the screen.
-                var posizione = $(window).scrollTop();
-                if(posizione>x){
-                    $("#breaddiv").addClass("breadcrumbsfixeddiv");
-                }
-                if(posizione<=x){
-                    $("#breaddiv").removeClass("breadcrumbsfixeddiv");
-                }
-
                 //Hide or Show back to top link.
                 if ($(this).scrollTop()) {
                     $("#toTop").show();
