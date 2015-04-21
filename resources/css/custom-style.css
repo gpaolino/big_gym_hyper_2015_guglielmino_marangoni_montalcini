@@ -1,7 +1,9 @@
 body { background-color: rgb(40, 40, 40); color: rgb(199, 199, 199) }
 
-/* Padding on the top of the page */
+/* Padding on the top of the home page */
 .top-space { width: 100%; height: 50px }
+/* Padding on the top of internal pages */
+.top-space2 { width: 100%; height: 90px }
 
 /* Navbar style */
 .navbar { background-color: rgb(29, 27, 16); border-color: rgb(29, 27, 16)}
