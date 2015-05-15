@@ -44,9 +44,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
+                        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Our Gym</a></li>
+                        <li><a href="#">Course Categories</a></li>
+                        <li><a href="#">Instructors</a></li>
+                        <li><a href="#">Rooms</a></li>
+                        <li><a href="#">Overall Schedule</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">Fees &amp; Registration</a></li>
+                        <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Action</a></li>
@@ -57,8 +63,9 @@
                                 <li class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
+                    <!--
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
@@ -77,7 +84,7 @@
                                 <li><a href="#">Separated link</a></li>
                             </ul>
                         </li>
-                    </ul>
+                    </ul>-->
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
@@ -110,15 +117,6 @@
             </a>
         </div>
         <!-- /.carousel -->
-
-        <!-- Breadcrumbs -->
-        <div id="breaddiv" class="breadcrumbsdiv">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-            </ol>
-        </div>
 
         <!-- Content of the home page -->
         <div class="container marketing">
@@ -222,17 +220,17 @@
 
             $("#toTop").hide();
 
-            var breadPosition = $("#breaddiv").position();
-            var x = breadPosition.top - 50;
+            //var breadPosition = $("#breaddiv").position();
+            //var x = breadPosition.top - 50;
             $(window).scroll(function() {
                 //Stops the breadcrumbs when it reach the top of the screen.
-                var posizione = $(window).scrollTop();
+                /*var posizione = $(window).scrollTop();
                 if(posizione>x){
                     $("#breaddiv").addClass("breadcrumbsfixeddiv");
                 }
                 if(posizione<=x){
                     $("#breaddiv").removeClass("breadcrumbsfixeddiv");
-                }
+                }*/
 
                 //Hide or Show back to top link.
                 if ($(this).scrollTop()) {
