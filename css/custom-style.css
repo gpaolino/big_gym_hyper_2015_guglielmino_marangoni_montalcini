@@ -83,12 +83,24 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
     color: rgb(255, 255, 255);
     background-color: rgb(232, 76, 61);
     border: 0px solid;
+    
+    background: -webkit-gradient(linear, left top, left bottom, from(#e84c3d), to(#fe8277));
+    background: -webkit-linear-gradient(top,  #e84c3d,  #fe8277);
+    background: -moz-linear-gradient(top,  #e84c3d,  #fe8277);
+    background: -ms-linear-gradient(top,  #e84c3d,  #fe8277);
+    background: -o-linear-gradient(top,  #e84c3d,  #fe8277);
 }
 
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
     background-image: none;
+    
+    background: -webkit-gradient(linear, left top, left bottom, from(#e84c3d), to(#fe8277));
+    background: -webkit-linear-gradient(top,  #e84c3d,  #fe8277);
+    background: -moz-linear-gradient(top,  #e84c3d,  #fe8277);
+    background: -ms-linear-gradient(top,  #e84c3d,  #fe8277);
+    background: -o-linear-gradient(top,  #e84c3d,  #fe8277);
 }
 
 /* List group items style */
