@@ -128,17 +128,17 @@ a.list-group-item:focus, a.list-group-item:hover { color: rgb(255, 236, 19); bac
 }
 
 .backtotop{
-    color: rgb(150, 150, 150);
+    color: rgb(0, 0, 0);
 }
 
 .backtotop:hover{
-    color: rgb(0, 0, 0);
+    color: rgb(232, 76, 61);
 }
 
 /*Text*/
 .text-muted {
-  color: white;
+  color: rgb(230, 230, 230);
 }
 
 /* Footer style */
-.footer { background-color: rgba(232, 76, 61, 0.92); margin-top: 30px }
+.footer { background-color: rgba(150, 150, 150, 0.92); margin-top: 20px; font-size: 11px; }
