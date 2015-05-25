@@ -13,30 +13,47 @@ function ready(){
         success: function(response) {
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
-            var el="";
-            var el1="";
-            var el2="";
-            for(var i=0;i<10;i+5){
-                console.log(courses[i].title);
-
-                    el+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='course.html?id="+ courses[i].id+"'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li> <li><a href='course.html?id="+ courses[i+1].id+"'>"+courses[i+1].full_name+"<span class='sr-only'>(current)</span></a></li><li><a href='course.html?id="+ courses[i+2].id+"'>"+courses[i+2].full_name+"<span class='sr-only'>(current)</span></a></li><li><a href='course.html?id="+ courses[i+3].id+"'>"+courses[i+3].full_name+"<span class='sr-only'>(current)</span></a></li><li><a href='course.html?id="+ courses[i+4].id+"'>"+courses[i+4].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
-            }
-                        for(var i=2;i<4;i++){
-                console.log(courses[i].title);
-
-                    el1+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
-            }
-                        for(var i=4;i<courses.length;i++){
-                console.log(courses[i].title);
-
-                    el2+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
-            }
+            var column = 0; 
+            var oldCourseCat = -1; 
             
+            $("contenuto").append("<div>"); 
+            for(var i = 0; i < courses.length; i++) {
+                $("contenuto").append(""+ courses[i].cfn); 
+                $("contenuto").append("<br>");
+            }
+            $("contenuto").append("</div>"); 
+              
+            $("contenuto").append('<div class="row row-offcanvas row-offcanvas-right"><div class="col-xs-12 col-sm-9">');
 
-            $("prova1").html(el);
-            $("prova5").html(el1);
-            $("prova9").html(el2);
-            
+            for(var i=0; i<courses.length;i++){
+                if(column%4==0){
+                    //Apro riga e stampo elemento con indice pari
+                    $("contenuto").append('<div class="row">');
+                }
+                if(oldCourseCat != courses[i].course_cat) {
+                    oldCourseCat = courses[i].course_cat;
+                    $("contenuto").append("<div class='col-sm-3'><img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>");    
+                    column++; 
+                    $("contenuto").append("<div class='col-sm-3'><li><a href='index.html'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>");
+                    }
+                    
+                    while(i < courses.length -1 && courses[i+1].course_cat == oldCourseCat) {
+                        i++; 
+                        $("contenuto").append("<li><a href='index.html'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>");
+                    }
+                    $("contenuto").append("</div>");
+                    column++; 
+                if(column%4==0){
+                     $("contenuto").append('</div><!--/row-->')
+                }             //Se l'ultimo elemento chiudo la riga
+                else if(i==courses.length-1){
+                    $("contenuto").append('</div><!--/row-->');
+                }
+               
+            }
+
+            $("contenuto").append('</div><!--/.col-xs-12.col-sm-9--></div><!--/row-->');     
+
         },
         error: function(request,error) 
         {
