@@ -14,16 +14,29 @@ function ready(){
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
             var el="";
-            for(var i=0;i<courses.length;i++){
+            var el1="";
+            var el2="";
+            for(var i=0;i<2;i++){
                 console.log(courses[i].title);
 
-                if(courses[i].id =="1" || courses[i].id =="3" || courses[i].id =="6") {
                     el+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
-                }else {
-                    el+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='#' class='not-active'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='#' class='not-active'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";}
             }
+                        for(var i=2;i<4;i++){
+                console.log(courses[i].title);
 
-            $("prova").html(el);
+                    el1+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
+            }
+                        for(var i=4;i<courses.length;i++){
+                console.log(courses[i].title);
+
+                    el2+="<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
+            }
+            
+
+            $("prova1").html(el);
+            $("prova5").html(el1);
+            $("prova9").html(el2);
+            
         },
         error: function(request,error) 
         {
