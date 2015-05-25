@@ -53,7 +53,11 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
 /* Colums section style */
 .container { padding-top: 30px }
 
-.img-column { border-radius: 0%; width: 150px; height: 150px; }
+.img-column { border-radius: 0%; width: 150px; height: 160px; padding-bottom: 10px; }
+
+.alignleft { float: left; padding: 15px 15px 15px 0; }
+
+.alignright { float: right; padding: 15px 0 15px 15px 15px; }
 
 /* Buttons style */
 .btn-default {
