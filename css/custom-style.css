@@ -65,7 +65,7 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
     background-color: rgb(232, 76, 61);
     border-radius: 0px;
     border: 0px solid;
-    
+
     background: -webkit-gradient(linear, left top, left bottom, from(#fe8277), to(#e84c3d));
     background: -webkit-linear-gradient(top,  #fe8277,  #e84c3d);
     background: -moz-linear-gradient(top,  #fe8277,  #e84c3d);
@@ -81,7 +81,7 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
     color: rgb(255, 255, 255);
     background-color: rgb(232, 76, 61);
     border: 0px solid;
-    
+
     background: -webkit-gradient(linear, left top, left bottom, from(#e84c3d), to(#fe8277));
     background: -webkit-linear-gradient(top,  #e84c3d,  #fe8277);
     background: -moz-linear-gradient(top,  #e84c3d,  #fe8277);
@@ -93,7 +93,7 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
     background-image: none;
-    
+
     background: -webkit-gradient(linear, left top, left bottom, from(#e84c3d), to(#fe8277));
     background: -webkit-linear-gradient(top,  #e84c3d,  #fe8277);
     background: -moz-linear-gradient(top,  #e84c3d,  #fe8277);
@@ -115,6 +115,10 @@ a.list-group-item:focus, a.list-group-item:hover { color: rgb(255, 255, 255); ba
     border-bottom-left-radius: 0px;
 }
 
+a {
+    cursor: pointer;
+}
+
 /* Back to Top button style */
 .backtotopdiv{
     z-index: 999;
@@ -133,7 +137,7 @@ a.list-group-item:focus, a.list-group-item:hover { color: rgb(255, 255, 255); ba
 
 /*Text*/
 .text-muted {
-  color: rgb(230, 230, 230);
+    color: rgb(230, 230, 230);
 }
 
 /* Footer style */
