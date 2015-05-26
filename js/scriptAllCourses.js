@@ -33,16 +33,13 @@ function ready(){
                 if(oldCourseCat != courses[i].course_cat) {
                     oldCourseCat = courses[i].course_cat;
                     el+="<div class='col-sm-2'><img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>";    
-<<<<<<< HEAD
+
                     column++;
                     if(courses[i].active == 1) {
                         el+="<div class='col-sm-4' style='margin-top:3%'><li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
                         el+="<div class='col-sm-4' style='margin-top:3%'><li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
-=======
-                    column++; 
-                    el+="<div class='col-sm-4' style='margin-bottom:3%'><li><a href='index.html'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
->>>>>>> 46b3cba673cf0e39479d2f9d50ea048926beaf60
+
                     }
                 }
                 while(i < courses.length -1 && courses[i+1].course_cat == oldCourseCat) {
