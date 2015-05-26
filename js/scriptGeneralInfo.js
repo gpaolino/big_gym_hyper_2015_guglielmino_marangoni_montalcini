@@ -14,8 +14,8 @@ function ready(){
             console.log(JSON.parse(response));
             var info=JSON.parse(response);
 
-            $("contenuto").html("<div id='sec0'><h1>Big Gym Position</h1><h3>How to get there</h3><p>"+info[0].how_to_get+"</p><h3>Map</h3><div id='map' style='width:100%; height:250px'></div><p>"+info[0].address+"</p></div>");
-            $("contenuto").append("<div id='sec1'><h1>Contact Us</h1><p>"+info[0].contact_info+"</p><h3>Contact details</h3><p>Phone number: "+info[0].phone_number+"</p><p>Fax: "+info[0].fax+"</p><p>Email: <a href='mailto:"+info[0].email+"'>"+info[0].email+"</a></p></div>");
+            $("contenuto").html("<div id='sec0'><h1>Big Gym Position</h1><h3><span class='glyphicon glyphicon-road' aria-hidden='true'></span><span style='margin-left:10px'>How to get there</span></h3><p>"+info[0].how_to_get+"</p><h3>Map</h3><div id='map' style='width:100%; height:250px'></div><p style='margin-top:10px'>"+info[0].address+"</p></div>");
+            $("contenuto").append("<div id='sec1'><h1><span>Contact Us</span></h1><p>"+info[0].contact_info+"</p><br/><div class='row row-offcanvas row-offcanvas-right'><div class='col-xs-12 col-sm-12'><div class='col-sm-7'><img src='img/call.png' alt='Missing image'></div><div class='col-sm-5'><h3><span class='glyphicon glyphicon-envelope' aria-hidden='true'></span><span style='margin-left:10px'>Contact details</span></h3><p>Phone number: "+info[0].phone_number+"</p><p>Fax: "+info[0].fax+"</p><p>Email: <a href='mailto:"+info[0].email+"'>"+info[0].email+"</a></p></div></div></div></div>");
             $("#sec1").hide();
             GetLocation(info[0].address);
         },
