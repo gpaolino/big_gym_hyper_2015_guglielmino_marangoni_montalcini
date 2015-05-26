@@ -12,9 +12,10 @@ if (mysqli_connect_errno()) { //verify connection
     exit(); //do nothing else 
 }
 else {
+    $par = $_REQUEST['par'];
     //echo "Successful connection"; // connection ok
     # extract results mysqli_result::fetch_array
-    $query = " SELECT * FROM course WHERE id='1' ";
+    $query = " SELECT * FROM course WHERE full_name = '".$par."'";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available

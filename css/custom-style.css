@@ -119,6 +119,11 @@ a {
     cursor: pointer;
 }
 
+.inactiveLink {
+    color: grey;
+}
+
+
 /* Back to Top button style */
 .backtotopdiv{
     z-index: 999;

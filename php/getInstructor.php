@@ -14,7 +14,7 @@ if (mysqli_connect_errno()) { //verify connection
 else {
     //echo "Successful connection"; // connection ok
     # extract results mysqli_result::fetch_array
-    $query = " SELECT course.full_name as cfn, course_cat.image, course.course_cat, course.level, course.active FROM course,course_cat WHERE course.course_cat = course_cat.id ORDER BY course_cat.full_name, course.level, cfn ";
+    $query = " SELECT * FROM instructor WHERE id='3' ";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available
