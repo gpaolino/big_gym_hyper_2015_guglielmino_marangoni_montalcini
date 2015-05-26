@@ -33,7 +33,7 @@ function ready(){
                     oldCourseCat = courses[i].course_cat;
                     el+="<div class='col-sm-2'><img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>";    
                     column++; 
-                    el+="<div class='col-sm-4' style='margin-top:3%'><li><a href='index.html'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    el+="<div class='col-sm-4' style='margin-bottom:3%'><li><a href='index.html'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     }
 
                     while(i < courses.length -1 && courses[i+1].course_cat == oldCourseCat) {
