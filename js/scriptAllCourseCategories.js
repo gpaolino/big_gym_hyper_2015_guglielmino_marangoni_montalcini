@@ -33,9 +33,9 @@ function ready(){
                 }else{
                     //Stampo elemento con indice dispari e chiudo la riga
                     if(courses[i].active == 1) {
-                        $("contenuto").append("<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a href='courseCategory.html?par="+courses[i].full_name+"'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
+                        $("contenuto").append("<div class='col-sm-3' style='margin-bottom:2%'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3' style='margin-bottom:2%'> <h3>"+courses[i].full_name+"</h3> <li><a href='courseCategory.html?par="+courses[i].full_name+"'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
                     } else {
-                        $("contenuto").append("<div class='col-sm-3'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3'> <h3>"+courses[i].full_name+"</h3> <li><a class='inactiveLink' href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a class='inactiveLink' href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
+                        $("contenuto").append("<div class='col-sm-3' style='margin-bottom:2%'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3' style='margin-bottom:2%'> <h3>"+courses[i].full_name+"</h3> <li><a class='inactiveLink' href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a class='inactiveLink' href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
                     }
                     $("contenuto").append('</div><!--/row-->');
                 }
