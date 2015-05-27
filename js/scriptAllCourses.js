@@ -19,12 +19,6 @@ function ready(){
             var contenuto=$("contenuto");
             var corsi;
 
-            el+='<div class="row row-offcanvas row-offcanvas-right"><div class="col-xs-12 col-sm-12">';
-
-
-
-
-
             for(var i=0; i<courses.length;i++){
                 if(column%4==0){
                     //Apro riga e stampo elemento con indice pari
@@ -32,13 +26,13 @@ function ready(){
                 }
                 if(oldCourseCat != courses[i].course_cat) {
                     oldCourseCat = courses[i].course_cat;
-                    el+="<div class='col-sm-2' style='margin-bottom:2%'><img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>";    
+                    el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%'><h4>"+courses[i].ccfn+":</h4><img class='media-object' src='"+courses[i].image+"' alt='Generic placeholder image'></div>";    
 
                     column++;
                     if(courses[i].active == 1) {
-                        el+="<div class='col-sm-4' style='margin-bottom:2%'><li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
-                        el+="<div class='col-sm-4' style='margin-bottom:2%'><li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
 
                     }
                 }
@@ -62,7 +56,7 @@ function ready(){
             }
 
             $("contenuto").html(el); 
-            $("contenuto").append('</div><!--/.col-xs-12.col-sm-12--></div><!--/row-->');     
+            $("contenuto").append('</div><!--/row-->');     
 
         },
         error: function(request,error) 

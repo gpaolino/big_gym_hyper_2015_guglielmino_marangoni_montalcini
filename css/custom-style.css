@@ -148,6 +148,12 @@ a {
 /* Footer style */
 .footer { background-color: rgba(150, 150, 150, 0.92); margin-top: 20px; font-size: 11px; }
 
+/*Row*/
+.row {margin-left: 0px;}
+
+/*col*/
+.col-xs-6 {height: 159px;}
+
 /*Change the time while collapse*/
 @media (max-width: 970px) {
     .navbar-header {
