@@ -55,6 +55,8 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
 
 .img-column { border-radius: 0%; width: 150px; height: 160px; padding-bottom: 10px; }
 
+.img-column2 { max-width: 100%; }
+
 .alignleft { float: left; padding: 15px 15px 15px 0; }
 
 .alignright { float: right; padding: 15px 0 15px 15px 15px; }
