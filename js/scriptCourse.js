@@ -7,6 +7,7 @@ function ready(){
     var items = getNamedParameter('par'); 
     items = unescape(items); 
     var items2 = getNamedParameter('par2'); 
+    var items3 = getNamedParameter('par3');
 
 
 
@@ -31,6 +32,7 @@ function ready(){
                 var next = -1; 
                 for(var i = 0; i < courses.length; i ++) {
                     if(courses[i].cfn == items) {
+                       
 
                         for(j = i+1; j < courses.length; j++) {
 
@@ -102,9 +104,9 @@ function ready(){
                 var next = -1; 
                 for(var i = 0; i < courses.length; i ++) {
                     if(courses[i].full_name == items) {
-                        
+
                         for(j = i+1; j < courses.length; j++) {
-                            
+
                             if(courses[j].active == 1 && courses[i].level == courses[j].level) {
                                 next = j; 
                                 break;
@@ -153,6 +155,87 @@ function ready(){
 
                 el+="<li><a href='course.html?par="+courses[previous].full_name+"&par2="+items2+"'>Previous<span class='sr-only'>(current)</span></a></li>";
                 el+="<li><a href='course.html?par="+courses[next].full_name+"&par2="+items2+"'>Next<span class='sr-only'>(current)</span></a></li>";
+
+            }
+            $("prevnext").append(el);   
+
+        },
+        error: function(request,error) 
+        {
+            console.log("Error");
+        }
+    });
+
+    $.ajax({
+        method: "POST",
+        //dataType: "json", //type of data
+        crossDomain: true, //localhost purposes
+        url: "php/getCoursesByCourseCategory.php?par="+items3, //Relative or absolute path to file.php file
+        data: {course:id},
+        success: function(response) {
+            console.log(JSON.parse(response));
+            var courses=JSON.parse(response);
+            var level= -1; 
+            var el=""; 
+
+            if(items2 == 'coursesByCourseCategory') {
+                
+                var previous = -1; 
+                var next = -1; 
+                for(var i = 0; i < courses.length; i ++) {
+
+                    if(courses[i].cfn == items) {
+
+                        for(j = i+1; j < courses.length; j++) {
+
+                            if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
+                                next = j; 
+                                break;
+                            }
+                        }
+                        if(i==0) {
+
+                            for(j = courses.length - 1; j >= 0; j --) {
+
+                                if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
+                                    previous = j; 
+                                    break; 
+                                }
+                            }
+                        } else {
+
+                            for(j = i-1; j >= 0; j--) {
+
+                                if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
+                                    previous = j; 
+                                    break; 
+                                }
+                            }
+                        }
+                        if(next == -1) {
+                            for(j = 0; j < courses.length; j ++) {
+                                if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
+                                    next = j; 
+                                    break; 
+                                }
+                            }
+                        }
+                        if(previous == -1) {
+                            for(j = courses.length - 1; j >= 0; j --) {
+
+                                if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
+                                    previous = j; 
+                                    break; 
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+
+                el+="<li><a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"'>Previous<span class='sr-only'>(current)</span></a></li>";
+                el+="<li><a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"'>Next<span class='sr-only'>(current)</span></a></li>";
 
             }
             $("prevnext").append(el);   
