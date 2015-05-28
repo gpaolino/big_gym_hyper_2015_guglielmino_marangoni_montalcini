@@ -11,7 +11,7 @@
 
 /*global define, window */
 
-(function (factory) {
+$(document).on('click',function (factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
         define([
