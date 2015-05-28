@@ -20,7 +20,7 @@ function ready(){
             el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>";
             for(var i = 0; i < courses.length; i++) {
                 if(courses[i].active == 1) {
-                    el+="<li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByLevel'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                 } else {
                     el+="<li><a class = 'inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
 

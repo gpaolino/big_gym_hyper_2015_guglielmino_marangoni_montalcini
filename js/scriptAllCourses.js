@@ -17,7 +17,6 @@ function ready(){
             var oldCourseCat = -1; 
             var el="";
             var contenuto=$("contenuto");
-            var corsi;
 
             for(var i=0; i<courses.length;i++){
                 if(column%4==0){
@@ -30,7 +29,7 @@ function ready(){
 
                     column++;
                     if(courses[i].active == 1) {
-                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a href='course.html?par="+courses[i].cfn+"&par2=allCourses'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
                         el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
 
@@ -39,7 +38,7 @@ function ready(){
                 while(i < courses.length -1 && courses[i+1].course_cat == oldCourseCat) {
                     i++;
                     if(courses[i].active == 1) {
-                        el+="<li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=allCourses'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
                         el+="<li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     }
