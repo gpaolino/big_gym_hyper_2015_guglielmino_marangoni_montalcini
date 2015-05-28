@@ -12,34 +12,35 @@ function ready(){
         data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
-            var courses=JSON.parse(response);
-
-            for(var i=0; i<courses.length;i++){
+            var courseCategories=JSON.parse(response);
+            var el=""; 
+            
+            for(var i=0; i<courseCategories.length;i++){
                 if(i%2==0){
                     //Apro riga e stampo elemento con indice pari
-                    $("contenuto").append('<div class="row">');
-                    if(courses[i].active == 1) {
-                        $("contenuto").append("<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courses[i].full_name+"</h4> <img class='media-object' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a href='courseCategory.html?par="+courses[i].full_name+"'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
+                    el+='<div class="row">';
+                    if(courseCategories[i].active == 1) {
+                       el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courseCategories[i].full_name+"</h4> <img class='media-object' src='"+courseCategories[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a href='courseCategory.html?par="+courseCategories[i].full_name+"'>What is "+courseCategories[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='coursesByCourseCategory.html?par="+courseCategories[i].full_name+"'>Courses for "+courseCategories[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
                     } else {
-                        $("contenuto").append("<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courses[i].full_name+"</h4> <img class='media-object' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a class='inactiveLink' href='#'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a class='inactiveLink' href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
+                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courseCategories[i].full_name+"</h4> <img class='media-object' src='"+courseCategories[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a class='inactiveLink' href='#'>What is "+courseCategories[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a class='inactiveLink' href='#'>Courses for "+courseCategories[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
                     }
 
                     //Se l'ultimo elemento è pari chiudo la riga
-                    if(i==courses.length-1){
-                        $("contenuto").append('</div><!--/row-->');
+                    if(i==courseCategories.length-1){
+                        el+='</div><!--/row-->';
                     }
                 }else{
                     //Stampo elemento con indice dispari e chiudo la riga
-                    if(courses[i].active == 1) {
-                        $("contenuto").append("<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courses[i].full_name+"</h4> <img class='media-object' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a href='courseCategory.html?par="+courses[i].full_name+"'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
+                    if(courseCategories[i].active == 1) {
+                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courseCategories[i].full_name+"</h4> <img class='media-object' src='"+courseCategories[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a href='courseCategory.html?par="+courseCategories[i].full_name+"'>What is "+courseCategories[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='coursesByCourseCategory.html?par="+courseCategories[i].full_name+"'>Courses for "+courseCategories[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
                     } else {
-                        $("contenuto").append("<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courses[i].full_name+"</h4> <img class='media-object' src='"+courses[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a class='inactiveLink' href='index.html'>What is "+courses[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a class='inactiveLink' href='index.html'>Courses for "+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>");
+                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%'> <h4>"+courseCategories[i].full_name+"</h4> <img class='media-object' src='"+courseCategories[i].image+"' alt='Generic placeholder image'></div> <div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>  <li><a class='inactiveLink' href='#'>What is "+courseCategories[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a class='inactiveLink' href='#'>Courses for "+courseCategories[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
                     }
-                    $("contenuto").append('</div><!--/row-->');
+                    el+='</div><!--/row-->';
                 }
             }
 
-            $("contenuto").append('</div><!--/row-->');     
+            $("contenuto").append(el);     
 
         },
         error: function(request,error) 

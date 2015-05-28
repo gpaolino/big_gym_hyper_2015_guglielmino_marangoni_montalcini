@@ -3,12 +3,13 @@ $(document).ready(ready);
 function ready(){
     console.log("I'm ready!");
     var id=1;
+    
+    var items = getNamedParameter('par');
 
     $.ajax({
-        method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "php/getCoursesByCourseCategory.php", //Relative or absolute path to file.php file
+        url: "php/getCoursesByCourseCategory.php?par="+items,  //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
@@ -21,7 +22,7 @@ function ready(){
                 if(courses[i].active == 1) {
                     el+="<li><a href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                 } else {
-                    el+="<li><a class = 'inactiveLink' href='course.html?par="+courses[i].cfn+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    el+="<li><a class = 'inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
 
                 }
             }
@@ -40,3 +41,26 @@ function ready(){
     });
 
 }
+
+function getNamedParameter(paramName){
+    var url = ""+window.location.href;
+    var allParams = url.split("?");
+    var allParamsString = ""+allParams[1];
+    var singleParamsWithNames = allParamsString.split("&");
+    var paramsNames = new Array();
+    var paramsValues = new Array();
+
+    for(var i=0; i!==singleParamsWithNames.length; i++){
+        var tempString = ""+singleParamsWithNames[i];
+        var couple = tempString.split("=");
+        paramsNames[i]=couple[0];
+        paramsValues[i]=couple[1];
+    }
+    for(var j=0; j!==paramsNames.length; j++){
+        if(paramName===paramsNames[j]){
+            return paramsValues[j];
+        }
+    }
+    return "";
+}
+
