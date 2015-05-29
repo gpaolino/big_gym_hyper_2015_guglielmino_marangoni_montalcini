@@ -152,7 +152,6 @@ function ready(){
                     }
                 }
 
-
                 el+="<li><a href='course.html?par="+courses[previous].full_name+"&par2="+items2+"'>Previous<span class='sr-only'>(current)</span></a></li>";
                 el+="<li><a href='course.html?par="+courses[next].full_name+"&par2="+items2+"'>Next<span class='sr-only'>(current)</span></a></li>";
 
@@ -282,10 +281,13 @@ function ready(){
             var el =""; 
             for(var i = 0; i < instructors.length; i++) {
                 if(instructors[i].active==1) {
-                    el+="<li><a href='instructor.html?par="+instructors[i].full_name+"'>Staff - "+instructors[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
+                    //Active list group item
+                    el+="<a href='instructor.html?par="+instructors[i].full_name+"' class='list-group-item'>Staff - "+instructors[i].full_name+"</a>";
+                    //el+="<li><a href='instructor.html?par="+instructors[i].full_name+"'>Staff - "+instructors[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
                 } else {
-                    el+="<li><a class='inactiveLink' href='#'>Staff - "+instructors[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
-
+                    //Inactive list group item
+                    el+="<a href='#' class='list-group-item disabled'>Staff - "+instructors[i].full_name+"</a>";
+                    //el+="<li><a class='inactiveLink' href='#'>Staff - "+instructors[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
                 }
             }
             $("connessioni").html(el);     
