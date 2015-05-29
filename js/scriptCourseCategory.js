@@ -21,8 +21,10 @@ function ready(){
             el+="<p><img class='img-column2' src='"+courseCategories[0].image+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courseCategories[0].description +"</p>"; 
           
-            $("contenuto").html(el); 
-            el2+="<li><a href='photoGalleryKickBoxing.html?par="+courseCategories[0].full_name+"'>"+courseCategories[0].full_name +" Photo-Gallery<span class='sr-only'>(current)</span></a></li>";
+            $("contenuto").html(el);
+            //Active list group item
+            el2+="<a href='photoGalleryKickBoxing.html?par="+courseCategories[0].full_name+"' class='list-group-item'>"+courseCategories[0].full_name+" Photo-Gallery</a>";
+            //el2+="<li><a href='photoGalleryKickBoxing.html?par="+courseCategories[0].full_name+"'>"+courseCategories[0].full_name +" Photo-Gallery<span class='sr-only'>(current)</span></a></li>";
             $("connessioni").html(el2);
             
 
