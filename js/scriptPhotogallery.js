@@ -18,7 +18,7 @@ function ready(){
             var photo=JSON.parse(response);
             var el ="";
             var el2="";
-            el+='<div class="row" style="text-align:center; padding:0 0 20px 0; margin-bottom:40px;"><h3 style="font-family:arial; font-weight:bold; font-size:30px;">'+photo[0].full_name+' - Photo Gallery</h3></div>';
+            el+='<div class="row" style="text-align:left; padding:0 0 20px 0; margin-bottom:40px;"><h3 style="font-family:arial; font-weight:bold; font-size:30px;">'+photo[0].full_name+' - Photo Gallery</h3></div>';
             
             
             el+='<div id="links">';
