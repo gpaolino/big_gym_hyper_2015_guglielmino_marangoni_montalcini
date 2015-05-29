@@ -18,7 +18,7 @@ function ready(){
             var el =""; 
             var el2="";
             el+="<h1>History of "+courseCategories[0].full_name+"</h1>"; 
-            el+="<p><img class='img-column2' src='"+courseCategories[0].image+"' alt='Generic placeholder image'></p>";
+            el+="<p><img class='img-column2' src='"+courseCategories[0].img_history+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courseCategories[0].history +"</p>"; 
           
             $("contenuto").html(el);
