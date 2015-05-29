@@ -5,18 +5,19 @@ function ready(){
     var id=1;
     
     var items = getNamedParameter('par');
+    items = unescape(items);
 
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "php/getPhotogalleryKickBoxing.php?par="+items, //Relative or absolute path to file.php file
+        url: "php/getPhotogallery.php?par="+items, //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response)  {
             console.log(JSON.parse(response));
             var photo=JSON.parse(response);
             var el ="";
-            
+            var el2="";
             el+='<div class="row" style="text-align:center; padding:0 0 20px 0; margin-bottom:40px;"><h3 style="font-family:arial; font-weight:bold; font-size:30px;">'+photo[0].full_name+' - Photo Gallery</h3></div>';
             
             
@@ -31,7 +32,13 @@ function ready(){
             
             el+='</div>';
             
-            $("contenuto").html(el);    
+            $("contenuto").html(el);  
+            
+            el2+="<a href='courseCategory.html?par="+items+"' class='list-group-item'>"+items+" Description</a>";
+            el2+="<a href='courseCategoryHistory.html?par="+items+"' class='list-group-item'>History of "+items+"</a>";
+            el2+="<a href='#' class='list-group-item'>"+items+" Photo-Gallery</a>";
+            $("connessioni").html(el2);
+            
 
         },
         error: function(request,error) 

@@ -13,6 +13,10 @@
         <link href="css/offcanvas.css" rel="stylesheet">
         <link href="css/custom-style.css" rel="stylesheet">
         <link href="css/scrolling-nav.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="css/bootstrap-image-gallery.css">
+
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.easing.min.js"></script>
@@ -20,57 +24,10 @@
         <script src="js/offcanvas.js"></script>
         <script src="js/back-to-top.js" type="text/javascript"></script>
         <!-- Script photo-gallery -->
-        <script src="js/photo-gallery.js"></script>
+        <script src="js/jquery.blueimp-gallery.min.js"></script>
+        <script src="js/bootstrap-image-gallery.js"></script>
+        <script src="js/scriptPhotogallery.js" type="text/javascript"></script>
     </head>
-    <style>
-        ul {         
-            padding:0 0 0 0;
-            margin:0 0 0 0;
-        }
-        ul li {     
-            list-style:none;           
-        }
-        ul li img {
-            cursor: pointer;
-        }
-        .modal-body {
-            padding:5px !important;
-        }
-        .modal-content {
-            border-radius:0;
-        }
-        .modal-dialog img {
-            text-align:center;
-            margin:0 auto;
-        }
-        .controls{          
-            width:50px;
-            display:block;
-            font-size:11px;
-            padding-top:8px;
-            font-weight:bold;          
-        }
-        .next {
-            float:right;
-            text-align:right;
-        }
-        /*override modal for demo only*/
-        .modal-dialog {
-            max-width:500px;
-            padding-top: 90px;
-        }
-        @media screen and (min-width: 768px){
-            .modal-dialog {
-                width:500px;
-                padding-top: 90px;
-            }          
-        }
-        @media screen and (max-width:1500px){
-            #ads {
-                display:none;
-            }
-        }
-    </style>
     <body id="page-top">   
 
         <div class="mycontainer">
@@ -96,7 +53,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
                             <li><a href="#">Our Gym</a></li>
-                            <li class="active"><a href="courseCategories.html">Course Categories</a></li>
+                            <li><a href="courseCategories.html">Course Categories</a></li>
                             <li><a href="#">Instructors</a></li>
                             <li><a href="#">Rooms</a></li>
                             <li><a href="#">Overall Schedule</a></li>
@@ -107,74 +64,20 @@
                 </div><!-- /.container-fluid -->
             </nav>
 
-
-
-
-            <div class="container">    
-                <div class="row" style="text-align:center; padding:0 0 20px 0; margin-bottom:40px;">
-                    <h3 style="font-family:arial; font-weight:bold; font-size:30px;">
-                        Photo Gallery Di Prova
-                    </h3>
-
-                </div>
-
-                <ul class="row">
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/kick_boxing/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/spinning/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/swimming/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/water_gym/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/water_spinning/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/zumba/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/kick_boxing/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/spinning/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/swimming/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/water_gym/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/water_spinning/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/zumba/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/kick_boxing/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/spinning/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/swimming/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/water_gym/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/water_spinning/1_red.png">
-                    </li>
-                    <li style="margin-bottom:25px;" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="img-responsive" src="img/course_categories/zumba/1_red.png">
-                    </li>
-                </ul>             
+            <div class="container" style="text-align:center;">
+                <contenuto></contenuto>
             </div> <!-- /container -->
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                <div class="list-group">
+                    <connessioni></connessioni>
+                </div>
+            </div><!--/.sidebar-offcanvas-->
+            
+
+
+
+
 
             <!-- Back to top element -->
             <div id="toTop" class="backtotopdiv">
@@ -185,6 +88,45 @@
             </div>
             <div class="push"></div>
         </div>
+
+
+        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery">
+            <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Prev
+                            </button>
+                            <button type="button" class="btn btn-default next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <!-- Page footer -->
         <footer class="footer">
@@ -199,14 +141,6 @@
             </div>
         </footer>
 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">         
-                    <div class="modal-body">                
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
 
     </body>
 
