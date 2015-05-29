@@ -73,8 +73,9 @@ function ready(){
                 }
 
 
-                el+="<li><a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"'>Previous<span class='sr-only'>(current)</span></a></li>";
-                el+="<li><a href='course.html?par="+courses[next].cfn+"&par2="+items2+"'>Next<span class='sr-only'>(current)</span></a></li>";
+                
+                el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+                el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
 
             }
             $("prevnext").append(el);   
