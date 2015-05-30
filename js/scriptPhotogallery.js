@@ -37,6 +37,7 @@ function ready(){
             el2+="<a href='courseCategory.html?par="+items+"' class='list-group-item'>"+items+" Description</a>";
             el2+="<a href='courseCategoryHistory.html?par="+items+"' class='list-group-item'>History of "+items+"</a>";
             el2+="<a href='#' class='list-group-item'>"+items+" Photo-Gallery</a>";
+            el2+="<a href='coursesByCourseCategory.html?par="+items+"' class='list-group-item'>"+items+" Courses</a>";
             $("connessioni").html(el2);
             
 

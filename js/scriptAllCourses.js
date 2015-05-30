@@ -16,6 +16,7 @@ function ready(){
             var column = 0; 
             var oldCourseCat = -1; 
             var el="";
+            var el2="";
             var contenuto=$("contenuto");
 
             for(var i=0; i<courses.length;i++){
@@ -55,7 +56,11 @@ function ready(){
             }
 
             $("contenuto").html(el); 
-            $("contenuto").append('</div><!--/row-->');     
+            $("contenuto").append('</div><!--/row-->');   
+            
+            el2+="<a href='#' class='list-group-item'>All Courses</a>";
+            el2+="<a href='coursesByLevel.html?' class='list-group-item'>Courses By Level</a>";
+            $("connessioni").html(el2);
 
         },
         error: function(request,error) 

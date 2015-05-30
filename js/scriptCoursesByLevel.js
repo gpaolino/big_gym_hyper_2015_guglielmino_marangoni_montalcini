@@ -15,6 +15,7 @@ function ready(){
             var courses=JSON.parse(response);
             var level= -1; 
             var el=""; 
+            var el2="";
 
 
             el+='<div class="row row-offcanvas row-offcanvas-right"><div class="col-xs-12 col-sm-9">';
@@ -45,6 +46,10 @@ function ready(){
             }
             $("contenuto").html(el); 
             $("contenuto").append('</div><!--/.col-xs-12.col-sm-9--></div><!--/row-->');     
+            
+            el2+="<a href='allCourses.html' class='list-group-item'>All Courses</a>";
+            el2+="<a href='#' class='list-group-item'>Courses By Level</a>";
+            $("connessioni").html(el2);
 
         },
         error: function(request,error) 
