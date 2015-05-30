@@ -26,13 +26,13 @@ function ready(){
                 }
                 if(oldCourseCat != courses[i].course_cat) {
                     oldCourseCat = courses[i].course_cat;
-                    el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%'><h4>"+courses[i].ccfn+":</h4><img class='media-object rounded-img' src='"+courses[i].image+"' alt='Generic placeholder image'></div>";    
+                    el+="<div class='col-sm-3'><h4>"+courses[i].ccfn+":</h4><img class='media-object rounded-img' src='"+courses[i].image+"' alt='Generic placeholder image'></div>";    
 
                     column++;
                     if(courses[i].active == 1) {
-                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a href='course.html?par="+courses[i].cfn+"&par2=allCourses'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<div class='col-sm-3' style='margin-top: 35px'><li><a href='course.html?par="+courses[i].cfn+"&par2=allCourses'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
-                        el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<div class='col-sm-3' style='margin-top: 35px'><li><a class='inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
 
                     }
                 }

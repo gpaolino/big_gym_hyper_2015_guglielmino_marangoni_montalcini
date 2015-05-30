@@ -64,6 +64,8 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
 /* Round rect image */
 .rounded-img { border-radius: 3px }
 
+.adapt-img { width: 100% }
+
 /* Map box style */
 .map-box {  border-radius: 5px; width:100%; height:250px }
 
