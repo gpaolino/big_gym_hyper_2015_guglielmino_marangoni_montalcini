@@ -29,8 +29,8 @@ function ready(){
                     }
                     el+='<div class="row">';
 
-                    el+="<div class='col-sm-6'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>"; 
-                    el+="<div class='col-sm-6'>"; 
+                    el+="<div class='col-sm-6' style='margin-bottom:2%'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>"; 
+                    el+="<div class='col-sm-6' style='margin-bottom:2%'>"; 
                     if(courses[i].active == 1) {
                         el+="<li><a href='course.html?par="+courses[i].full_name+"&par2=coursesByLevel'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
