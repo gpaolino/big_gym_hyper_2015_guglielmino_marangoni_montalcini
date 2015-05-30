@@ -16,7 +16,7 @@ function ready(){
             var level= -1; 
             var el=""; 
             var el2="";
-
+            var lev_vector = ["Beginner", "Intermediate", "Advanced"];
 
             el+='<div class="row row-offcanvas row-offcanvas-right"><div class="col-xs-12 col-sm-9">';
 
@@ -27,10 +27,10 @@ function ready(){
                         el+="</div>";
                         el+='</div>';
                     }
-                    el+='<div class="row">';
+                    el+='<div class="row" style="margin-bottom: 35px">';
 
-                    el+="<div class='col-sm-6' style='margin-bottom:2%'> <img class='img-column2' src='"+courses[i].image+"' alt='Generic placeholder image'></div>"; 
-                    el+="<div class='col-sm-6' style='margin-bottom:2%'>"; 
+                    el+="<div class='col-sm-4'><h4>"+lev_vector[level]+"</h4><img class='img-column2 rounded-img' src='img/courses/level"+courses[i].level+".png' alt='Generic placeholder image'></div>";
+                    el+="<div class='col-sm-8' style='margin-top: 35px'>"; 
                     if(courses[i].active == 1) {
                         el+="<li><a href='course.html?par="+courses[i].full_name+"&par2=coursesByLevel'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
                     } else {
@@ -46,12 +46,10 @@ function ready(){
             }
             $("contenuto").html(el); 
             $("contenuto").append('</div><!--/.col-xs-12.col-sm-9--></div><!--/row-->');     
-            
+
             el2+="<ul class='nav nav-tabs'>";
             el2+="<li role='presentation'><a href='allCourses.html'>All Courses</a></li>";
             el2+="<li role='presentation' class='active'><a href='coursesByLevel.html'>Courses by Level</a></li>";
-            //el2+="<a href='allCourses.html' class='list-group-item'>All Courses</a>";
-            //el2+="<a href='#' class='list-group-item'>Courses By Level</a>";
             el2+="</ul>";
             $("connessioni").html(el2);
 

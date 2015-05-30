@@ -22,7 +22,7 @@ function ready(){
             for(var i=0; i<courses.length;i++){
                 if(column%4==0){
                     //Apro riga e stampo elemento con indice pari
-                    el+='<div class="row">';
+                    el+='<div class="row" style="margin-bottom: 35px">';
                 }
                 if(oldCourseCat != courses[i].course_cat) {
                     oldCourseCat = courses[i].course_cat;

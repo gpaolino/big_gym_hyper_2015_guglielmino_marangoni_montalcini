@@ -18,7 +18,7 @@ function ready(){
             for(var i=0; i<courseCategories.length;i++){
                 if(i%2==0){
                     //Apro riga e stampo elemento con indice pari
-                    el+='<div class="row">';
+                    el+='<div class="row" style="margin-bottom: 35px">';
                     if(courseCategories[i].active == 1) {
                        el+="<div class='col-sm-3'> <h4>"+courseCategories[i].full_name+"</h4> <img class='media-object rounded-img' src='"+courseCategories[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3' style='margin-top: 35px'>  <li><a href='courseCategory.html?par="+courseCategories[i].full_name+"'>What is "+courseCategories[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='coursesByCourseCategory.html?par="+courseCategories[i].full_name+"'>Courses for "+courseCategories[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
                     } else {
