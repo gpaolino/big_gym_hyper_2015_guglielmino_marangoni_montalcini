@@ -75,6 +75,7 @@ function ready(){
 
                 
                 el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+                el+=" (All courses) ";
                 el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
 
             }
@@ -152,9 +153,12 @@ function ready(){
 
                     }
                 }
+                
+                var lev_vector = ["Beginner", "Intermediate", "Advanced"];
 
-                el+="<li><a href='course.html?par="+courses[previous].full_name+"&par2="+items2+"'>Previous<span class='sr-only'>(current)</span></a></li>";
-                el+="<li><a href='course.html?par="+courses[next].full_name+"&par2="+items2+"'>Next<span class='sr-only'>(current)</span></a></li>";
+                el+="<a href='course.html?par="+courses[previous].full_name+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+                el+=" ("+lev_vector[courses[previous].level]+" courses) ";
+                el+="<a href='course.html?par="+courses[next].full_name+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
 
             }
             $("prevnext").append(el);   
@@ -234,8 +238,9 @@ function ready(){
                 }
 
 
-                el+="<li><a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"'>Previous<span class='sr-only'>(current)</span></a></li>";
-                el+="<li><a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"'>Next<span class='sr-only'>(current)</span></a></li>";
+                el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+                el+=" ("+courses[previous].ccfn+" courses) ";
+                el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
 
             }
             $("prevnext").append(el);   
