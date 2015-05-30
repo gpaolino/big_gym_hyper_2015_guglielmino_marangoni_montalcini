@@ -4,7 +4,7 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
   
-    var items = $.urlParams('par');
+    var items = getNamedParameter('par');
     
     $.ajax({
         method: "POST",
@@ -18,10 +18,10 @@ function ready(){
             var el =""; 
             el+="<h1>"+courses[0].full_name+"</h1>"; 
             el+="<p><img class='img-column2' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
-            el+="<p>"+courses[0].description +"</p>"; 
-        
-          
+            el+="<p>"+courses[0].biography +"</p>"; 
+            el+="<p>"+courses[0].prizes_awards +"</p>"; 
             $("contenuto").html(el);     
+
 
         },
         error: function(request,error) 
@@ -32,20 +32,24 @@ function ready(){
 
 }
 
-(function($) {
+function getNamedParameter(paramName){
+    var url = ""+window.location.href;
+    var allParams = url.split("?");
+    var allParamsString = ""+allParams[1];
+    var singleParamsWithNames = allParamsString.split("&");
+    var paramsNames = new Array();
+    var paramsValues = new Array();
 
-
-    $.urlParams = function(name){
-
-        var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-
-        if (!results) { 
-            return 0; 
+    for(var i=0; i!==singleParamsWithNames.length; i++){
+        var tempString = ""+singleParamsWithNames[i];
+        var couple = tempString.split("=");
+        paramsNames[i]=couple[0];
+        paramsValues[i]=couple[1];
+    }
+    for(var j=0; j!==paramsNames.length; j++){
+        if(paramName===paramsNames[j]){
+            return paramsValues[j];
         }
-
-        return results[1] || 0;
-    };
-
-
-
-})(jQuery);
+    }
+    return "";
+}
