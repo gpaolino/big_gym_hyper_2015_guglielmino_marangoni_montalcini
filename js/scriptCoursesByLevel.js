@@ -47,8 +47,12 @@ function ready(){
             $("contenuto").html(el); 
             $("contenuto").append('</div><!--/.col-xs-12.col-sm-9--></div><!--/row-->');     
             
-            el2+="<a href='allCourses.html' class='list-group-item'>All Courses</a>";
-            el2+="<a href='#' class='list-group-item'>Courses By Level</a>";
+            el2+="<ul class='nav nav-tabs'>";
+            el2+="<li role='presentation'><a href='allCourses.html'>All Courses</a></li>";
+            el2+="<li role='presentation' class='active'><a href='coursesByLevel.html'>Courses by Level</a></li>";
+            //el2+="<a href='allCourses.html' class='list-group-item'>All Courses</a>";
+            //el2+="<a href='#' class='list-group-item'>Courses By Level</a>";
+            el2+="</ul>";
             $("connessioni").html(el2);
 
         },
