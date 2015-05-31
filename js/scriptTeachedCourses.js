@@ -7,25 +7,31 @@ function ready(){
     var items = getNamedParameter('par');
 
     $.ajax({
-        method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "php/getInstructor.php?par="+items, //Relative or absolute path to file.php file
+        url: "php/getTeachedCourses.php?par="+items,  //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
             var el =""; 
-            var el2 ="";
-            el+="<h1>"+courses[0].full_name+"</h1>"; 
-            el+="<p><img class='img-column2' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
-            el+="<p>"+courses[0].biography +"</p>"; 
-            el+="<p>"+courses[0].prizes_awards +"</p>"; 
-            $("contenuto").html(el);     
+            el+='<div class="row">';
+            el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><img class='media-object' src='"+courses[0].img+"' alt='Generic placeholder image'></div>";
+            el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>";
+            for(var i = 0; i < courses.length; i++) {
+                if(courses[i].active == 1) {
+                    el+="<li><a href='course.html?par="+courses[i].full_name+"&par2=coursesByCourseCategory&par3="+items+"'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
+                } else {
+                    el+="<li><a class = 'inactiveLink' href='#'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
 
-            el2+="<a href='#' class='list-group-item'>Presentation</a>";
-            el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
-            $("connessioni").html(el2);
+                }
+            }
+            el+="</div>"; 
+            el+="</div>";
+
+
+
+            $("contenuto").html(el);     
 
         },
         error: function(request,error) 
@@ -33,8 +39,6 @@ function ready(){
             console.log("Error");
         }
     });
-
-
 
 }
 
@@ -59,3 +63,4 @@ function getNamedParameter(paramName){
     }
     return "";
 }
+
