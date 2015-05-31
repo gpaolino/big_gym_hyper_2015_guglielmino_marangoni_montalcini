@@ -41,7 +41,7 @@ function ready(){
 
                 el2+="<a href='courseCategory.html?par="+items+"' class='list-group-item'>"+items+" Description</a>";
                 el2+="<a href='courseCategoryHistory.html?par="+items+"' class='list-group-item'>History of "+items+"</a>";
-                el2+="<a href='#' class='list-group-item active'>"+items+" Photo-Gallery</a>";
+                el2+="<a href='#' class='list-group-item active'>"+items+" Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
                 el2+="<a href='coursesByCourseCategory.html?par="+items+"' class='list-group-item'>"+items+" Courses</a>";
                 
                 el3+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
@@ -76,7 +76,7 @@ function ready(){
                 $("contenuto").html(el);  
 
                 el2+="<a href='instructor.html?par="+items+"' class='list-group-item'>Presentation</a>";
-                el2+="<a href='#' class='list-group-item active'>Photo-Gallery</a>";
+                el2+="<a href='#' class='list-group-item active'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
                 el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
                 
                 $("connessioni").html(el2);
