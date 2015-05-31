@@ -16,8 +16,8 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             el+='<div class="row">';
-            el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><img class='media-object' src='"+courses[0].img+"' alt='Generic placeholder image'></div>";
-            el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>";
+            el+="<div class='col-xs-6 col-md-3'><h4>"+courses[0].ccfn+"</h4><img class='media-object' src='"+courses[0].image+"' alt='Generic placeholder image'></div>";
+            el+="<div class='col-xs-6 col-md-3' style='margin-top:35px;'>";
             for(var i = 0; i < courses.length; i++) {
                 if(courses[i].active == 1) {
                     el+="<li><a href='course.html?par="+courses[i].full_name+"&par2=coursesByCourseCategory&par3="+items+"'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";

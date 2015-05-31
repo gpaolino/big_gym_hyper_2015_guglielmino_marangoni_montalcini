@@ -15,7 +15,7 @@ else {
     $par = $_REQUEST['par'];
     //echo "Successful connection"; // connection ok
     # extract results mysqli_result::fetch_array
-    $query = " SELECT course.full_name, course.active FROM instructor, teach, course WHERE instructor.id = teach.instr_id AND course.id = teach.course_id AND instructor.full_name = '".$par."' ORDER BY course.level, course.full_name ";
+    $query = " SELECT course.full_name, course.active, course_cat.image, course_cat.full_name as ccfn FROM instructor, teach, course, course_cat WHERE instructor.id = teach.instr_id AND course.course_cat=course_cat.id AND course.id = teach.course_id AND instructor.full_name = '".$par."' ORDER BY course.level, course.full_name ";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available
