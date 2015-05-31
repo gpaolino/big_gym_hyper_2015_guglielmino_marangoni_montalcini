@@ -32,7 +32,7 @@ function ready(){
 
             el3+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
             el3+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-            el3+="<li class='active'>"+items+"</li>";
+            el3+="<li class='active'>"+items+" - Description</li>";
             el3+="</ol></div>";
 
             //el2+="<li><a href='photoGalleryKickBoxing.html?par="+courseCategories[0].full_name+"'>"+courseCategories[0].full_name +" Photo-Gallery<span class='sr-only'>(current)</span></a></li>";
