@@ -8,7 +8,7 @@ function ready(){
     items = unescape(items); 
     var items2 = getNamedParameter('par2'); 
     var items3 = getNamedParameter('par3');
-
+    items3 = unescape(items3);
 
 
 
@@ -24,7 +24,7 @@ function ready(){
             var column = 0; 
             var oldCourseCat = -1; 
             var el="";
-
+            var el2="";
 
             if(items2 == 'allCourses') {
 
@@ -77,9 +77,15 @@ function ready(){
                 el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" (All courses) ";
                 el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
-
+                
+                el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+                el2+="<li><a href='allCourses.html'>All Courses</a></li>";
+                el2+="<li class='active'>"+items+"</li>";
+                el2+="</ol></div>";
             }
             $("prevnext").append(el);   
+            $("breadcrumb").append(el2);
+            
 
         },
         error: function(request,error) 
@@ -100,6 +106,7 @@ function ready(){
             var courses=JSON.parse(response);
             var level= -1; 
             var el=""; 
+            var el2="";
             if(items2 == 'coursesByLevel') {
 
                 var previous = -1; 
@@ -159,9 +166,16 @@ function ready(){
                 el+="<a href='course.html?par="+courses[previous].full_name+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" ("+lev_vector[courses[previous].level]+" courses) ";
                 el+="<a href='course.html?par="+courses[next].full_name+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
+                
+                el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+                el2+="<li><a href='coursesByLevel.html'>Courses By Level</a></li>";
+                el2+="<li class='active'>"+items+"</li>";
+                el2+="</ol></div>";
 
             }
-            $("prevnext").append(el);   
+            $("prevnext").append(el); 
+            $("breadcrumb").append(el2);
+            
 
         },
         error: function(request,error) 
@@ -181,6 +195,7 @@ function ready(){
             var courses=JSON.parse(response);
             var level= -1; 
             var el=""; 
+            var el2="";
 
             if(items2 == 'coursesByCourseCategory') {
                 
@@ -241,9 +256,16 @@ function ready(){
                 el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" ("+courses[previous].ccfn+" courses) ";
                 el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
+                
+                el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+                el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
+                el2+="<li><a href='coursesByCourseCategory.html?par="+items3+"'>Courses By Course Category - " +items3 +"</a></li>";
+                el2+="<li class='active'>"+items+"</li>";
+                el2+="</ol></div>";
 
             }
-            $("prevnext").append(el);   
+            $("prevnext").append(el); 
+            $("breadcrumb").append(el2);
 
         },
         error: function(request,error) 

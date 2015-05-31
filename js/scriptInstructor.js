@@ -23,7 +23,7 @@ function ready(){
             el+="<p>"+courses[0].prizes_awards +"</p>"; 
             $("contenuto").html(el);     
 
-            el2+="<a href='#' class='list-group-item'>Presentation</a>";
+            el2+="<a href='#' class='list-group-item active'>Presentation</a>";
             el2+="<a href='photogallery.html?par="+items+"&par2=instructor' class='list-group-item'>Photo-Gallery</a>";
             el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
             

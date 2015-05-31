@@ -24,7 +24,7 @@ function ready(){
             $("contenuto").html(el);
             //Active list group item
             el2+="<a href='courseCategory.html?par="+courseCategories[0].full_name+"' class='list-group-item'>"+courseCategories[0].full_name+" Description</a>";
-            el2+="<a href='#' class='list-group-item'>History of "+courseCategories[0].full_name+"</a>";
+            el2+="<a href='#' class='list-group-item active'>History of "+courseCategories[0].full_name+"</a>";
             el2+="<a href='photoGallery.html?par="+courseCategories[0].full_name+"&par2=courseCategory' class='list-group-item'>"+courseCategories[0].full_name+" Photo-Gallery</a>";
             el2+="<a href='coursesByCourseCategory.html?par="+courseCategories[0].full_name+"' class='list-group-item'>"+courseCategories[0].full_name+" Courses</a>";
             

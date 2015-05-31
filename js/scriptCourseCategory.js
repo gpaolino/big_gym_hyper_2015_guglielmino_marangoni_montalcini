@@ -5,7 +5,8 @@ function ready(){
     var id=1;
 
     var items = getNamedParameter('par');
-    
+    items = unescape(items);
+
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
@@ -17,20 +18,27 @@ function ready(){
             var courseCategories=JSON.parse(response);
             var el =""; 
             var el2="";
+            var el3=""; 
             el+="<h1>"+courseCategories[0].full_name+"</h1>"; 
             el+="<p><img class='img-column2' src='"+courseCategories[0].image+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courseCategories[0].description +"</p>"; 
-          
+
             $("contenuto").html(el);
             //Active list group item
-            el2+="<a href='#' class='list-group-item'>"+courseCategories[0].full_name+" Description</a>";
+            el2+="<a href='#' class='list-group-item active'>"+courseCategories[0].full_name+" Description</a>";
             el2+="<a href='courseCategoryHistory.html?par="+courseCategories[0].full_name+"' class='list-group-item'>History of "+courseCategories[0].full_name+"</a>";
             el2+="<a href='photoGallery.html?par="+courseCategories[0].full_name+"&par2=courseCategory' class='list-group-item'>"+courseCategories[0].full_name+" Photo-Gallery</a>";
             el2+="<a href='coursesByCourseCategory.html?par="+courseCategories[0].full_name+"' class='list-group-item'>"+courseCategories[0].full_name+" Courses</a>";
-             
+
+            el3+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+            el3+="<li><a href='courseCategories.html'>Course Categories</a></li>";
+            el3+="<li class='active'>"+items+"</li>";
+            el3+="</ol></div>";
+
             //el2+="<li><a href='photoGalleryKickBoxing.html?par="+courseCategories[0].full_name+"'>"+courseCategories[0].full_name +" Photo-Gallery<span class='sr-only'>(current)</span></a></li>";
             $("connessioni").html(el2);
-            
+            $("breadcrumb").append(el3);
+
 
         },
         error: function(request,error) 
