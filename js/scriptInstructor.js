@@ -30,17 +30,28 @@ function ready(){
 
             $("connessioni").html(el2);
 
-            el3+="<div class='row' style='margin-top:20px'><div class='col-sm-12'><a class='twitter-timeline' href='https://twitter.com/g_paolino' data-widget-id='605396458595069952'>Tweet di @g_paolino</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script></div></div>";
-
-            $("socialsection").html(el3);
-
         },
         error: function(request,error) 
         {
             console.log("Error");
         }
     });
-
+    
+    $.ajax({
+        method: "POST",
+        //dataType: "json", //type of data
+        crossDomain: true, //localhost purposes
+        url: "http://www.bgym.altervista.org/php/getTwitterNews.php", //Relative or absolute path to file.php file
+        data: {},
+        success: function(response) {
+            console.log(JSON.parse(response));
+            var news=(JSON.parse(response));
+        },
+        error: function(request,error)
+        {
+            console.log("Error");
+        }
+    });
 
 
 }
