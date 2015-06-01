@@ -17,8 +17,9 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             var el2 ="";
+            var el3 ="";
             el+="<h1>"+courses[0].full_name+"</h1>"; 
-            el+="<p><img class='img-column2' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
+            el+="<p><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courses[0].biography +"</p>"; 
             el+="<p>"+courses[0].prizes_awards +"</p>"; 
             $("contenuto").html(el);     
@@ -27,8 +28,11 @@ function ready(){
             el2+="<a href='photogallery.html?par="+items+"&par2=instructor' class='list-group-item'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
             el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
             
-            
             $("connessioni").html(el2);
+            
+            el3+="<a class='twitter-timeline' href='https://twitter.com/g_paolino' data-widget-id='605396458595069952'>Tweet di @g_paolino</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>";
+            
+            $("social-sec").html(el3);
 
         },
         error: function(request,error) 
