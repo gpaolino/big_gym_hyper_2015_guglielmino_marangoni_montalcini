@@ -25,59 +25,51 @@ function ready(){
             var oldCourseCat = -1; 
             var el="";
             var el2="";
-
             if(items2 == 'allCourses') {
 
                 var previous = -1; 
                 var next = -1; 
                 for(var i = 0; i < courses.length; i ++) {
                     if(courses[i].cfn == items) {
-                       
-
                         for(j = i+1; j < courses.length; j++) {
-
                             if(courses[j].active == 1) {
                                 next = j; 
                                 break;
                             }
                         }
-                        if(i==0) {
-
-                            for(j = courses.length - 1; j >= 0; j --) {
-
-                                if(courses[j].active == 1) {
-                                    previous = j; 
-                                    break; 
-                                }
-                            }
-                        } else {
-
-                            for(j = i-1; j >= 0; j--) {
-
-                                if(courses[j].active == 1) {
-                                    previous = j; 
-                                    break; 
-                                }
+                        for(j = i-1; j >= 0; j--) {
+                            if(courses[j].active == 1) {
+                                previous = j; 
+                                break;
                             }
                         }
                         if(next == -1) {
-                            for(j = 0; j < courses.length; j ++) {
+                            for(j = 0; j < courses.length; j++) {
                                 if(courses[j].active == 1) {
                                     next = j; 
-                                    break; 
+                                    break;
                                 }
                             }
                         }
+                        if(previous == -1) {
+                            for(j = courses.length - 1; j >= 0; j--) {
+                                if(courses[j].active == 1) {
+                                    previous = j; 
+                                    break;
+                                }
+                            }
+                        }
+
 
                     }
                 }
 
 
-                
+
                 el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" (All courses) ";
                 el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
-                
+
                 el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                 el2+="<li><a href='allCourses.html'>All Courses</a></li>";
                 el2+="<li class='active'>"+items+"</li>";
@@ -85,7 +77,7 @@ function ready(){
             }
             $("prevnext").append(el);   
             $("breadcrumb").append(el2);
-            
+
 
         },
         error: function(request,error) 
@@ -109,64 +101,52 @@ function ready(){
             var el2="";
             if(items2 == 'coursesByLevel') {
 
+
+
                 var previous = -1; 
                 var next = -1; 
                 for(var i = 0; i < courses.length; i ++) {
                     if(courses[i].full_name == items) {
-
                         for(j = i+1; j < courses.length; j++) {
-
                             if(courses[j].active == 1 && courses[i].level == courses[j].level) {
                                 next = j; 
                                 break;
                             }
                         }
-                        if(i==0) {
-
-                            for(j = courses.length - 1; j >= 0; j --) {
-
-                                if(courses[j].active == 1 && courses[i].level == courses[j].level) {
-                                    previous = j; 
-                                    break; 
-                                }
-                            }
-                        } else {
-
-                            for(j = i-1; j >= 0; j--) {
-
-                                if(courses[j].active == 1 && courses[i].level == courses[j].level) {
-                                    previous = j; 
-                                    break; 
-                                }
+                        for(j = i-1; j >= 0; j--) {
+                            if(courses[j].active == 1 && courses[i].level == courses[j].level) {
+                                previous = j; 
+                                break;
                             }
                         }
                         if(next == -1) {
-                            for(j = 0; j < courses.length; j ++) {
+                            for(j = 0; j < courses.length; j++) {
                                 if(courses[j].active == 1 && courses[i].level == courses[j].level) {
                                     next = j; 
-                                    break; 
+                                    break;
                                 }
                             }
                         }
                         if(previous == -1) {
-                            for(j = courses.length - 1; j >= 0; j --) {
-
+                            for(j = courses.length - 1; j >= 0; j--) {
                                 if(courses[j].active == 1 && courses[i].level == courses[j].level) {
                                     previous = j; 
-                                    break; 
+                                    break;
                                 }
                             }
                         }
 
+
                     }
                 }
-                
+
+
                 var lev_vector = ["Beginner", "Intermediate", "Advanced"];
 
                 el+="<a href='course.html?par="+courses[previous].full_name+"&par2="+items2+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" ("+lev_vector[courses[previous].level]+" courses) ";
                 el+="<a href='course.html?par="+courses[next].full_name+"&par2="+items2+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
-                
+
                 el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                 el2+="<li><a href='coursesByLevel.html'>Courses By Level</a></li>";
                 el2+="<li class='active'>"+items+"</li>";
@@ -175,7 +155,7 @@ function ready(){
             }
             $("prevnext").append(el); 
             $("breadcrumb").append(el2);
-            
+
 
         },
         error: function(request,error) 
@@ -198,65 +178,50 @@ function ready(){
             var el2="";
 
             if(items2 == 'coursesByCourseCategory') {
-                
+
                 var previous = -1; 
                 var next = -1; 
                 for(var i = 0; i < courses.length; i ++) {
-
                     if(courses[i].cfn == items) {
-
                         for(j = i+1; j < courses.length; j++) {
-
                             if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
                                 next = j; 
                                 break;
                             }
                         }
-                        if(i==0) {
-
-                            for(j = courses.length - 1; j >= 0; j --) {
-
-                                if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
-                                    previous = j; 
-                                    break; 
-                                }
-                            }
-                        } else {
-
-                            for(j = i-1; j >= 0; j--) {
-
-                                if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
-                                    previous = j; 
-                                    break; 
-                                }
+                        for(j = i-1; j >= 0; j--) {
+                            if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
+                                previous = j; 
+                                break;
                             }
                         }
                         if(next == -1) {
-                            for(j = 0; j < courses.length; j ++) {
+                            for(j = 0; j < courses.length; j++) {
                                 if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
                                     next = j; 
-                                    break; 
+                                    break;
                                 }
                             }
                         }
                         if(previous == -1) {
-                            for(j = courses.length - 1; j >= 0; j --) {
-
+                            for(j = courses.length - 1; j >= 0; j--) {
                                 if(courses[j].active == 1 && courses[i].cc == courses[j].cc) {
                                     previous = j; 
-                                    break; 
+                                    break;
                                 }
                             }
                         }
+
 
                     }
                 }
 
 
+
                 el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" ("+courses[previous].ccfn+" courses) ";
                 el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
-                
+
                 el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                 el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
                 el2+="<li><a href='coursesByCourseCategory.html?par="+items3+"'>Courses By Course Category - " +items3 +"</a></li>";
