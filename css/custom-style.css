@@ -20,7 +20,7 @@ body { background-color: white; color: rgb(150, 150, 150); background-image:url(
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover { color: rgb(232, 76, 61) }
 
-.navbar-default .navbar-nav>.non-active>a { color: rgba(232, 76, 61, 0.92); border-bottom: 3px solid transparent;}
+.navbar-default .navbar-nav>.non-active>a { color: rgb(255, 255, 255); border-bottom: 3px solid transparent;}
 .navbar-default .navbar-nav>.active>a { color: rgb(232, 76, 61); font-weight: bold; background-color: rgb(255, 255, 255); border-bottom: 3px solid; border-bottom-color: rgb(255, 255, 255) }
 .navbar-default .navbar-nav>.active>a:visited { color: rgb(232, 76, 61); font-weight: bold; background-color: rgb(255, 255, 255); border-bottom: 3px solid; border-bottom-color: rgb(255, 255, 255) }
 .navbar-default .navbar-nav>.active>a:hover { color: rgb(232, 76, 61); font-weight: bold; background-color: rgb(255, 255, 255) border-bottom: 3px solid; border-bottom-color: rgb(255, 255, 255) }
