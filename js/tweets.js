@@ -1,7 +1,7 @@
 $(function(){
 
 	$.ajax({
-		url: 'get_tweets.php',
+		url: 'http://www.bgym.altervista.org/php/get_tweets.php',
 		type: 'GET',
 		success: function(response) {
 
