@@ -38,20 +38,27 @@ function ready(){
     });
     
     $.ajax({
-        method: "POST",
-        //dataType: "json", //type of data
-        crossDomain: true, //localhost purposes
-        url: "http://www.bgym.altervista.org/php/getTwitterNews.php", //Relative or absolute path to file.php file
-        data: {},
-        success: function(response) {
-            console.log(JSON.parse(response));
-            var news=(JSON.parse(response));
-        },
-        error: function(request,error)
-        {
-            console.log("Error");
-        }
-    });
+		url: 'http://www.bgym.altervista.org/php/getTwitterNews.php',
+		type: 'GET',
+		success: function(response) {
+
+			if (typeof response.errors === 'undefined' || response.errors.length < 1) {
+				
+				    var $tweets = $('<ul></ul>');
+				    $.each(response, function(i, obj) {
+				        $tweets.append('<li>' + obj.text + '</li>');
+				    });
+
+				    $('.tweets-container').html($tweets);
+
+			} else {
+				    $('.tweets-container p:first').text('Response error');
+			}
+		},
+		error: function(errors) {
+			$('.tweets-container p:first').text('Request error');
+		}
+	});
 
 
 }
