@@ -10,7 +10,7 @@ function ready(){
     $.ajax({
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "php/getCoursesByCourseCategory.php?par="+items,  //Relative or absolute path to file.php file
+        url: "http://www.bgym.altervista.org/php/getCoursesByCourseCategory.php?par="+items,  //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));

@@ -10,7 +10,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "php/getInstructor.php?par="+items, //Relative or absolute path to file.php file
+        url: "http://www.bgym.altervista.org/php/getInstructor.php?par="+items, //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
