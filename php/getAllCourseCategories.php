@@ -14,7 +14,7 @@ if (mysqli_connect_errno()) { //verify connection
 else {
     //echo "Successful connection"; // connection ok
     # extract results mysqli_result::fetch_array
-    $query = " SELECT * FROM course_cat ORDER BY id ASC ";
+    $query = " SELECT * FROM course_cat ORDER BY full_name ";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available
