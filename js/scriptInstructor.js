@@ -24,7 +24,7 @@ function ready(){
             $("contenuto").html(el);     
 
             el2+="<a href='#' class='list-group-item active'>Presentation</a>";
-            el2+="<a href='photogallery.html?par="+items+"&par2=instructor' class='list-group-item'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
+            el2+="<a href='photoGallery.html?par="+items+"&par2=instructor' class='list-group-item'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
             el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
             
             
