@@ -32,7 +32,7 @@ function ready(){
             
             el3+="<a class='twitter-timeline' href='https://twitter.com/g_paolino' data-widget-id='605396458595069952'>Tweet di @g_paolino</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>";
             
-            $("social-sec").html(el3);
+            $("socialsection").html(el3);
 
         },
         error: function(request,error) 
