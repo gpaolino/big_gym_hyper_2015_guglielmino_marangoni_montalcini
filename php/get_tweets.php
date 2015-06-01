@@ -1,6 +1,6 @@
 <?php
 
-require_once('twitter_proxy.php');
+require_once('http://www.bgym.altervista.org/php/twitter_proxy.php');
 
 // Twitter OAuth Config options
 $oauth_access_token = '355765572-uN2lzsdkEkMYVLJQ0TKNbsSUX0Xlux09oKPDope4';
