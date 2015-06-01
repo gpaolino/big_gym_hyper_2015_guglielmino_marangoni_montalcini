@@ -4,7 +4,7 @@
 //echo "I'm the php";
 
 //connection to db
-$mysqli = new mysqli("localhost", "root", "", "my_bgym");
+$mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
 
 if (mysqli_connect_errno()) { //verify connection
 
