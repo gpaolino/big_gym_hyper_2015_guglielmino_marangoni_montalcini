@@ -19,19 +19,19 @@ function ready(){
             var el2 ="";
             var el3 ="";
             el+="<h1>"+courses[0].full_name+"</h1>"; 
-            el+="<p><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
-            el+="<p>"+courses[0].biography +"</p>"; 
-            el+="<p>"+courses[0].prizes_awards +"</p>"; 
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9'><p>Age: "+calculateAge(courses[0].birthdate)+"</p><p>Sex: "+courses[0].sex+"</p><p>Height: "+courses[0].height+" cm</p></div></div>";
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].biography +"</div></div>"; 
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].prizes_awards +"</div></div>"; 
             $("contenuto").html(el);     
 
             el2+="<a href='#' class='list-group-item active'>Presentation</a>";
             el2+="<a href='photoGallery.html?par="+items+"&par2=instructor' class='list-group-item'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
             el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
-            
+
             $("connessioni").html(el2);
-            
-            el3+="<a class='twitter-timeline' href='https://twitter.com/g_paolino' data-widget-id='605396458595069952'>Tweet di @g_paolino</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>";
-            
+
+            el3+="<div class='row' style='margin-top:20px'><div class='col-sm-12'><a class='twitter-timeline' href='https://twitter.com/g_paolino' data-widget-id='605396458595069952'>Tweet di @g_paolino</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script></div></div>";
+
             $("socialsection").html(el3);
 
         },
@@ -66,3 +66,13 @@ function getNamedParameter(paramName){
     }
     return "";
 }
+
+var calculateAge = function(birthday) {
+    var now = new Date();
+    var past = new Date(birthday);
+    var nowYear = now.getFullYear();
+    var pastYear = past.getFullYear();
+    var age = nowYear - pastYear;
+
+    return age;
+};
