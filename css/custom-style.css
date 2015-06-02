@@ -1,4 +1,8 @@
-body { background-color: white; color: rgb(150, 150, 150); background-image:url(../img/pattern.png) }
+body{
+    background-color: white;
+    color: rgb(150, 150, 150);
+    background-image:url(../img/pattern.png);
+}
 
 /* Padding on the top of the home page */
 .top-space { width: 100%; height: 50px }

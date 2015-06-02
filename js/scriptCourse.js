@@ -253,6 +253,7 @@ function ready(){
             el+="<p><img class='img-column2' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courses[0].description +"</p>"; 
 
+            $("title").html("Big Gym - "+courses[0].full_name);
             $("contenuto").html(el);     
 
         },

@@ -19,8 +19,9 @@ function ready(){
             var el =""; 
             var el2="";
             var el3="";
+            $("title").html("Big Gym - "+courseCategories[0].full_name+" - History");
             el+="<h1>History of "+courseCategories[0].full_name+"</h1>"; 
-            el+="<p><img class='img-column2' src='"+courseCategories[0].img_history+"' alt='Generic placeholder image'></p>";
+            el+="<p><img class='img-column2 rounded-img' src='"+courseCategories[0].img_history+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courseCategories[0].history +"</p>"; 
           
             $("contenuto").html(el);

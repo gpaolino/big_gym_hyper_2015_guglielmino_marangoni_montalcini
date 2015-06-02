@@ -17,9 +17,10 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             var el2="";
-            el+='<div class="row">';
-            el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'><img class='media-object' src='"+courses[0].img+"' alt='Generic placeholder image'></div>";
-            el+="<div class='col-xs-6 col-md-3' style='margin-bottom:2%; margin-top:5%;'>";
+            el+="<h1>These are the courses related to "+courses[0].ccfn+":</h1>";
+            el+='<div class="row" style="margin-top: 20px">';
+            el+="<div class='col-sm-3' style='margin-bottom: 20px'><img class='media-object rounded-img' src='"+courses[0].img+"' alt='Generic placeholder image'></div>";
+            el+="<div class='col-sm-9'>";
             for(var i = 0; i < courses.length; i++) {
                 if(courses[i].active == 1) {
                     el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+items+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";

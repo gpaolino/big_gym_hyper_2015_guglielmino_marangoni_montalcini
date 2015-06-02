@@ -19,6 +19,7 @@ function ready(){
             var el2 ="";
             var loading_tweets ="";
             
+            $("title").html("Big Gym - "+courses[0].full_name);
             el+="<h1>"+courses[0].full_name+"</h1>"; 
             el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9'><p>Age: "+calculateAge(courses[0].birthdate)+"</p><p>Sex: "+courses[0].sex+"</p><p>Height: "+courses[0].height+" cm</p></div></div>";
             el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].biography +"</div></div>"; 
