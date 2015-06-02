@@ -17,6 +17,8 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             var el2 ="";
+            var loading_tweets ="";
+            
             el+="<h1>"+courses[0].full_name+"</h1>"; 
             el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9'><p>Age: "+calculateAge(courses[0].birthdate)+"</p><p>Sex: "+courses[0].sex+"</p><p>Height: "+courses[0].height+" cm</p></div></div>";
             el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].biography +"</div></div>"; 
@@ -28,6 +30,9 @@ function ready(){
             el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
 
             $("connessioni").html(el2);
+            
+            loading_tweets+="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest News</span></h3><p>Loading tweets...</p>";
+            $("tweets").html(loading_tweets);
 
         },
         error: function(request,error) 
@@ -42,18 +47,20 @@ function ready(){
 //Retrieve instructor's tweets
 $(document).ready(function() {
     var refreshID = setInterval(function() {
-        $.getJSON('http://www.bgym.altervista.org/php/twitter/tweets_json.php?count=30',function(data) {
+        $.getJSON('http://www.bgym.altervista.org/php/twitter/tweets_json.php?count=6',function(data) {
             listTweets(data);
         });
     }, 5000);
 });
 //Decide what data of the tweet to print
 function listTweets(data) {
-    var el3 ="";
+    var el3 ="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest News</span></h3><div class='row'><div class='col-sm-12' style='border: 1px solid; border-color: rgb(150, 150, 150); border-radius: 3px'>";
     $.each(data, function(index) {
-        console.log(data[index].text+" "+data[index].created_at+" "+data[index].place+" "+data[index].user.screen_name)
+        //console.log(data[index].text+" "+data[index].created_at+" "+data[index].place+" "+data[index].user.screen_name)
+        el3+="<p style='color: rgb(100, 100, 100)'>"+data[index].created_at+"</p>";
         el3+="<p>"+data[index].text+"</p>";
     });
+    el3+="</div></div>";
     $("tweets").html(el3);
 }
 
