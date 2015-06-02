@@ -17,7 +17,6 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             var el2 ="";
-            var el3 ="";
             el+="<h1>"+courses[0].full_name+"</h1>"; 
             el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9'><p>Age: "+calculateAge(courses[0].birthdate)+"</p><p>Sex: "+courses[0].sex+"</p><p>Height: "+courses[0].height+" cm</p></div></div>";
             el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].biography +"</div></div>"; 
@@ -38,6 +37,24 @@ function ready(){
     });
 
 
+}
+
+//Retrieve instructor's tweets
+$(document).ready(function() {
+    var refreshID = setInterval(function() {
+        $.getJSON('http://www.bgym.altervista.org/php/twitter/tweets_json.php?count=30',function(data) {
+            listTweets(data);
+        });
+    }, 5000);
+});
+//Decide what data of the tweet to print
+function listTweets(data) {
+    var el3 ="";
+    $.each(data, function(index) {
+        console.log(data[index].text+" "+data[index].created_at+" "+data[index].place+" "+data[index].user.screen_name)
+        el3+="<p>"+data[index].text+"</p>";
+    });
+    $("tweets").html(el3);
 }
 
 function getNamedParameter(paramName){

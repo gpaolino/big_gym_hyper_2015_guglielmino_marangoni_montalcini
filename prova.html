@@ -45,45 +45,22 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="non-active"><a href="index.html">Home<span class="sr-only"></span></a></li>
-                            <li><a class="cursoreDisabilitato" href="#">Our Gym</a></li>
+                            <li class="non-active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Our Gym</a></li>
                             <li><a href="courseCategories.html">Course Categories</a></li>
-                            <li><a class="cursoreDisabilitato" href="#">Instructors</a></li>
-                            <li><a class="cursoreDisabilitato" href="#">Rooms</a></li>
-                            <li><a class="cursoreDisabilitato" href="#">Overall Schedule</a></li>
+                            <li><a href="#">Instructors</a></li>
+                            <li><a href="#">Rooms</a></li>
+                            <li><a href="#">Overall Schedule</a></li>
                             <li><a href="location.html">Location</a></li>
-                            <li><a class="cursoreDisabilitato"href="#">Fees &amp; Registration</a></li>
+                            <li><a href="#">Fees &amp; Registration</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
 
             <div class="container">
-
-                <div class="row row-offcanvas row-offcanvas-right">
-
-                    <div class="col-xs-12 col-sm-9">
-                        <p class="pull-right visible-xs">
-                            <button type="button" class="btn btn-default btn-xs" data-toggle="offcanvas">Menu</button>
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <contenuto></contenuto>
-                            </div>
-                        </div><!--/row-->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <tweets></tweets>
-                            </div>
-                        </div>
-                    </div><!--/.col-xs-12.col-sm-9-->
-
-                    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-                        <div class="list-group">
-                            <connessioni></connessioni>
-                        </div>
-                    </div><!--/.sidebar-offcanvas-->
-                </div><!--/row-->
+                <div id="tweetlist">
+                </div>
             </div><!--/.container-->
 
             <!-- Back to top element -->
@@ -117,8 +94,6 @@
         <script src="js/jquery.easing.min.js"></script>
         <script src="js/scrolling-nav.js"></script>
         <script src="js/offcanvas.js"></script>
-        <script src="http://www.bgym.altervista.org/php/twitter/tweets_json.php?count=30" type="text/javascript"></script>
-        <script src="js/scriptInstructor.js"></script>
         <script>
             $("#toTop").hide();
             $(window).scroll(function() {
@@ -129,6 +104,23 @@
                     $("#toTop").hide();
                 }
             });
+        </script>
+        <script src="php/twitter/tweets_json.php?count=30" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var refreshID = setInterval(function() {
+                    $.getJSON('php/twitter/tweets_json.php?count=30',function(data) {
+                        listTweets(data);
+                        $('#twwetlist').trigger('create');
+                    });
+                }, 5000);
+            });
+
+            function listTweets(data) {
+                $.each(data, function(index) {
+                    console.log(data[index].text+" "+data[index].created_at+" "+data[index].place+" "+data[index].user.screen_name)
+                });
+            }
         </script>
     </body>
 </html>
