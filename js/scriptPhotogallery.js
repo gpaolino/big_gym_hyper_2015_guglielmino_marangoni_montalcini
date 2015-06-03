@@ -14,7 +14,7 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://www.bgym.altervista.org/php/getPhotogallery.php?par="+items +"&par2="+items2, //Relative or absolute path to file.php file
+        url: "http://bgym.altervista.org/php/getPhotogallery.php?par="+items +"&par2="+items2, //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response)  {
             if(items2 == 'courseCategory') {

@@ -1,11 +1,9 @@
 <?php 
-header('Access-Control-Allow-Origin: *');
 //get all the course from db and reply using json structure
 
 //echo "I'm the php";
 
 //connection to db
-header('Access-Control-Allow-Origin: *');
 $mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
 
 if (mysqli_connect_errno()) { //verify connection
