@@ -8,8 +8,8 @@ require 'tmhOAuth.php'; // Get it from: https://github.com/themattharris/tmhOAut
 $connection = new tmhOAuth(array(
   'consumer_key' => 'KsQ77h667USYvtdrBmYNQnjLB',
 	'consumer_secret' => 'j1VDvDWJiGpkRH9NW9FSpqjPF23ip9A0SjN1yMaogzeUNIXTJo',
-	'user_token' => '355765572-Z8XMYGJ4yKP0SCvQ4B4o9Tvi81Udgj2mfQDjQjXw', //access token
-	'user_secret' => 'BcGci3peaqeJ3xgQjuIAqqTYcoqgO8bMsdQgEC4T4wFAy' //access token secret
+	'user_token' => '355765572-FnWLccaLZHze19edEpG9vfQ8EOjj12wddv5vMs7i', //access token
+	'user_secret' => '576s7SUmHMzNL71UZ36ExS58bzOWvzZbhEPNtRkaEoWP6' //access token secret
 ));
 
 // set up parameters to pass
