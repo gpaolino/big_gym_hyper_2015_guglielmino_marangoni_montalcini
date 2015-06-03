@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *'); 
 //get all the course from db and reply using json structure
 
 //echo "I'm the php";
