@@ -250,8 +250,11 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             el+="<h1>"+courses[0].full_name+"</h1>"; 
-            el+="<p><img class='img-column2' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
+            el+="<p><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courses[0].description +"</p>"; 
+            el+="<h3>Time table:</h3>"; 
+            el+="<div style='border: 1px solid; border-color: rgb(150, 150, 150); border-radius: 3px'><div class='col-sm-3'><p>"+courses[0].first_day+"</p><p>"+courses[0].first_time+"</p></div>";
+            el+="<div class='col-sm-3'><p>"+courses[0].second_day+"</p><p>"+courses[0].second_time+"</p></div></div>";
 
             $("title").html("Big Gym - "+courses[0].full_name);
             $("contenuto").html(el);     
