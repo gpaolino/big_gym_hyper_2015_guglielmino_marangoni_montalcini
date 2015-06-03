@@ -43,3 +43,5 @@ if ($http_code === 200) { // if everything's good
 }
 
 // You may have to download and copy http://curl.haxx.se/ca/cacert.pem
+
+?>

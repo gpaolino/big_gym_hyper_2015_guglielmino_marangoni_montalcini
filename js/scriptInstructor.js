@@ -20,10 +20,10 @@ function ready(){
             var loading_tweets ="";
             
             $("title").html("Big Gym - "+courses[0].full_name);
-            el+="<h1>"+courses[0].full_name+"</h1>"; 
-            el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9'><p>Age: "+calculateAge(courses[0].birthdate)+"</p><p>Sex: "+courses[0].sex+"</p><p>Height: "+courses[0].height+" cm</p></div></div>";
-            el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].biography +"</div></div>"; 
-            el+="<div class='row' style='margin-top:20px'><div class='col-sm-12'>"+courses[0].prizes_awards +"</div></div>"; 
+            el+="<div class='col-sm-10'><h1>"+courses[0].full_name+"</h1></div>"; 
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9' style='margin-top: 20px'><p><b>Age: </b>"+calculateAge(courses[0].birthdate)+"</p><p><b>Sex: </b>"+courses[0].sex+"</p><p><b>Height: </b>"+courses[0].height+" cm</p></div></div>";
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-10'><p><b>Bio:</b></p>"+courses[0].biography +"</div></div>"; 
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-10'>"+courses[0].prizes_awards +"</div></div>"; 
             $("contenuto").html(el);     
 
             el2+="<a href='#' class='list-group-item active'>Presentation</a>";
@@ -32,7 +32,7 @@ function ready(){
 
             $("connessioni").html(el2);
             
-            loading_tweets+="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest News</span></h3><p>Loading tweets...</p>";
+            loading_tweets+="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest Tweets</span></h3><p>Loading tweets...</p>";
             $("tweets").html(loading_tweets);
 
         },
@@ -55,7 +55,7 @@ $(document).ready(function() {
 });
 //Decide what data of the tweet to print
 function listTweets(data) {
-    var el3 ="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest News</span></h3><div class='row'><div class='col-sm-12' style='border: 1px solid; border-color: rgb(150, 150, 150); border-radius: 3px'>";
+    var el3 ="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest Tweets</span></h3><div class='row'><div class='col-sm-10' style='border: 1px solid; border-color: rgb(150, 150, 150); border-radius: 3px; padding-top: 10px'>";
     $.each(data, function(index) {
         //console.log(data[index].text+" "+data[index].created_at+" "+data[index].place+" "+data[index].user.screen_name)
         el3+="<p style='color: rgb(100, 100, 100)'>"+data[index].created_at+"</p>";
