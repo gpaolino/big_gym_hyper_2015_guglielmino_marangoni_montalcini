@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 require 'tmhOAuth.php'; // Get it from: https://github.com/themattharris/tmhOAuth
 
 // Use the data from http://dev.twitter.com/apps to fill out this info
