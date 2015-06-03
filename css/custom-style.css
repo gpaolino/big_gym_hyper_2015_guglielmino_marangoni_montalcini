@@ -188,6 +188,20 @@ html, body {
 /*cursore disabilitato*/
 .cursoreDisabilitato {cursor: not-allowed;}
 
+/* Nav Tabs */
+.nav-tabs {
+    border-bottom-color: #aaa;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border-color: #aaa;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs>li>a:hover {
+    border-bottom-color: #aaa;
+}
+
 /*Change the time while collapse*/
 @media (max-width: 970px) {
     .navbar-header {
