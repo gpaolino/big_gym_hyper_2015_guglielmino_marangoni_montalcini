@@ -17,7 +17,7 @@ function ready(){
             var courses=JSON.parse(response);
             var el =""; 
             var el2="";
-            el+="<h1>These are the courses related to "+courses[0].ccfn+":</h1>";
+            el+="<div class='col-sm-12' style='margin-bottom: 20px'><h1>These are the courses related to "+courses[0].ccfn+":</h1></div>";
             el+='<div class="row" style="margin-top: 20px">';
             el+="<div class='col-sm-3' style='margin-bottom: 20px'><img class='media-object rounded-img' src='"+courses[0].img+"' alt='Generic placeholder image'></div>";
             el+="<div class='col-sm-9'>";

@@ -18,7 +18,7 @@ function ready(){
             var el2="";
             var lev_vector = ["Beginner", "Intermediate", "Advanced"];
 
-            //el+='<div class="row row-offcanvas row-offcanvas-right"><div class="col-xs-12 col-sm-9">';
+            el+='<div class="col-sm-10"><h1>Select your favorite course:</h1></div>';
 
             for(var i=0; i<courses.length;i++){
                 if(courses[i].level != level) {
@@ -27,7 +27,7 @@ function ready(){
                         el+="</div>";
                         el+='</div>';
                     }
-                    el+='<div class="col-sm-10"><h1>Select your favorite course:</h1></div><div class="row" style="margin-bottom: 35px">';
+                    el+='<div class="row" style="margin-bottom: 35px">';
 
                     el+="<div class='col-sm-3'><h4>"+lev_vector[level]+"</h4><img class='img-column2 rounded-img' src='img/courses/level"+courses[i].level+".png' alt='Generic placeholder image'></div>";
                     el+="<div class='col-sm-9' style='margin-top: 35px'>"; 

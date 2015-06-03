@@ -16,7 +16,7 @@ function ready(){
             var column = 0; 
             var oldCourseCat = -1; 
             var courses2=courses;  
-            var el = ""; 
+            var el = '<div class="col-sm-10"><h1>Select your favorite course:</h1></div>'; 
             var el2 = "";
             var insertedCC = 0; 
             var numberOfCC = 0; 
