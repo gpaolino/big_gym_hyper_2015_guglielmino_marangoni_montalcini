@@ -13,7 +13,7 @@ function ready(){
         success: function(response) {
             console.log(JSON.parse(response));
             var courseCategories=JSON.parse(response);
-            var el=""; 
+            var el='<div class="col-sm-10"><h1>Select your favorite course category:</h1></div>';
             var offset; 
             var insertedCC = 0; 
             var first = 0; 
@@ -26,7 +26,7 @@ function ready(){
             while (insertedCC < courseCategories.length) {
                     if(first == 0) {
                     //Apro riga e stampo elemento con indice pari
-                    el+='<div class="col-sm-10"><h1>Select your favorite course category:</h1></div><div class="row">';
+                    el+='<div class="row">';
                     if(courseCategories[i].active == 1) {
                        el+="<div class='col-sm-3' style='margin-top: 10px'> <h4>"+courseCategories[i].full_name+"</h4> <img class='media-object rounded-img' src='"+courseCategories[i].image+"' alt='Generic placeholder image'></div> <div class='col-sm-3' style='margin-top: 45px; margin-bottom: 35px'>  <li><a href='courseCategory.html?par="+courseCategories[i].full_name+"'>What is "+courseCategories[i].full_name+"?<span class='sr-only'>(current)</span></a></li> <li><a href='coursesByCourseCategory.html?par="+courseCategories[i].full_name+"'>Courses for "+courseCategories[i].full_name+"<span class='sr-only'>(current)</span></a></li></div>";
                     } else {
