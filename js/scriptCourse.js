@@ -253,9 +253,7 @@ function ready(){
             el+="<p><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></p>";
             el+="<p>"+courses[0].description +"</p>"; 
             el+="<h3>Time table:</h3>"; 
-            el+="<div style='border: 1px solid; border-color: rgb(150, 150, 150); border-radius: 3px'><div class='col-sm-3'><p>"+courses[0].first_day+"</p><p>"+courses[0].first_time+"</p></div>";
-            el+="<div class='col-sm-3'><p>"+courses[0].second_day+"</p><p>"+courses[0].second_time+"</p></div></div>";
-
+            el+="<div class='table-responsive'><table class='table table-bordered'><thead></thead><tr><th>"+courses[0].first_day+"</th><th>"+courses[0].second_day+"</th></tr></thead><tbody><tr><td>"+courses[0].first_time+"</td><td>"+courses[0].second_time+"</td></tr></tbody></table></div>";
             $("title").html("Big Gym - "+courses[0].full_name);
             $("contenuto").html(el);     
 
