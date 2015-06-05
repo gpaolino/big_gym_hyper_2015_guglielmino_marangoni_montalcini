@@ -2,6 +2,10 @@
 * Off Canvas
 * --------------------------------------------------
 */
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
 @media screen and (max-width: 767px) {
     .row-offcanvas {
         position: relative;
