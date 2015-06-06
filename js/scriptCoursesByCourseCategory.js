@@ -34,7 +34,7 @@ function ready(){
 
             el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
             el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-            el2+="<li class='active'>Courses By Course Categories - " + items + "</li>";
+            el2+="<li class='active'>Courses - " + items + "</li>";
             el2+="</ol></div>";
 
 
