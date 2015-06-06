@@ -224,7 +224,7 @@ function ready(){
 
                 el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                 el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-                el2+="<li><a href='coursesByCourseCategory.html?par="+items3+"'>Courses By Course Category - " +items3 +"</a></li>";
+                el2+="<li><a href='coursesByCourseCategory.html?par="+items3+"'>Courses - " +items3 +"</a></li>";
                 el2+="<li class='active'>"+items+"</li>";
                 el2+="</ol></div>";
 
