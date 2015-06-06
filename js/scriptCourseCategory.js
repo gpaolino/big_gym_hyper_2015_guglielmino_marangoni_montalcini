@@ -101,9 +101,9 @@ function ready(){
 
 
 
-            el+="<a href='course.html?par="+courseCategories[previous].full_name+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+            el+="<a href='courseCategory.html?par="+courseCategories[previous].full_name+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
             el+=" (All Course Categories) ";
-            el+="<a href='course.html?par="+courseCategories[next].full_name+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
+            el+="<a href='courseCategory.html?par="+courseCategories[next].full_name+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
 
             $("prevnext").html(el);
 
