@@ -19,6 +19,7 @@ function ready(){
             var el =""; 
             var el2="";
             var el3=""; 
+            var el4=""; 
             $("title").html("Big Gym - "+courseCategories[0].full_name);
             el+="<h1>"+courseCategories[0].full_name+"</h1>"; 
             el+="<p><img class='img-column2 rounded-img' src='"+courseCategories[0].cat_image+"' alt='Generic placeholder image'></p>";
@@ -36,6 +37,8 @@ function ready(){
             el3+="<li class='active'>"+items+" - Description</li>";
             el3+="</ol></div>";
 
+
+
             //el2+="<li><a href='photoGalleryKickBoxing.html?par="+courseCategories[0].full_name+"'>"+courseCategories[0].full_name +" Photo-Gallery<span class='sr-only'>(current)</span></a></li>";
             $("connessioni").html(el2);
             $("breadcrumb").append(el3);
@@ -48,6 +51,68 @@ function ready(){
         }
     });
 
+    $.ajax({
+        method: "POST",
+        //dataType: "json", //type of data
+        crossDomain: true, //localhost purposes
+        url: "http://bgym.altervista.org/php/getAllCourseCategories.php", //Relative or absolute path to file.php file
+        data: {course:id},
+        success: function(response) {
+            console.log(JSON.parse(response));
+            var courseCategories=JSON.parse(response);
+            var el=""; 
+
+            var previous = -1; 
+            var next = -1; 
+            for(var i = 0; i < courseCategories.length; i ++) {
+                if(courseCategories[i].full_name == items) {
+                    for(j = i+1; j < courseCategories.length; j++) {
+                        if(courseCategories[j].active == 1) {
+                            next = j; 
+                            break;
+                        }
+                    }
+                    for(j = i-1; j >= 0; j--) {
+                        if(courseCategories[j].active == 1) {
+                            previous = j; 
+                            break;
+                        }
+                    }
+                    if(next == -1) {
+                        for(j = 0; j < courseCategories.length; j++) {
+                            if(courseCategories[j].active == 1) {
+                                next = j; 
+                                break;
+                            }
+                        }
+                    }
+                    if(previous == -1) {
+                        for(j = courseCategories.length - 1; j >= 0; j--) {
+                            if(courseCategories[j].active == 1) {
+                                previous = j; 
+                                break;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+
+
+            el+="<a href='course.html?par="+courseCategories[previous].full_name+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+            el+=" (All Course Categories) ";
+            el+="<a href='course.html?par="+courseCategories[next].full_name+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
+
+            $("prevnext").html(el);
+
+        },
+        error: function(request,error) 
+        {
+            console.log("Error");
+        }
+    });
 }
 
 function getNamedParameter(paramName){
