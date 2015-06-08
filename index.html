@@ -11,6 +11,8 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/carousel.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/heroic-features.css" rel="stylesheet">
         <!-- Custom style override -->
         <link href="css/custom-style.css" rel="stylesheet">
         <link href="css/scrolling-nav.css" rel="stylesheet">
@@ -26,9 +28,6 @@
 
     <body id="page-top">
         <div class="mycontainer">
-
-            <!-- Padding on the top of the page -->
-            <div class="top-space"></div>
 
             <!-- NavBar fixed on the top -->
             <nav class="navbar navbar-default navbar-fixed-top top-nav-collapse">
@@ -97,64 +96,129 @@
             </div>
             <!-- /.carousel -->
 
-            <!-- Content of the home page -->
-            <div class="container marketing">
+            <!-- Page Features -->
+            <div class="row text-center">
 
-                <!-- Columns of text below the carousel -->
-                <div class="row">
-                    <div class="col-sm-4" style="margin-bottom: 15px;">
-                        <center><img class="img-column" src="img/home/resized/logo_big_gym.png" alt="Generic placeholer image"></center>
-                        <center><p>Discover the main features of our gym</p></center>
-                        <p style="float:right"><a class="btn btn-default cursoreDisabilitato" href="#" role="button">Our Gym &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/equipment.png" alt="Generic placeholder image"></center>
-                        <center><p>Look at our brand new machines and course equipment</p></center>
-                        <p style="float:right"><a class="btn btn-default cursoreDisabilitato" href="#" role="button">Equipment &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/testimonials.png" alt="Generic placeholder image"></center>
-                        <center><p>People's opinions about us</p></center>
-                        <p style="float:right"><a class="btn btn-default cursoreDisabilitato" href="#" role="button">Testimonials &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                </div><!-- /.row -->
-                <br/>
-                <div class="row">
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/courses.png" alt="Generic placeholder image"></center>
-                        <center><p>Take a look at the list of the offered courses</p></center>
-                        <p style="float:right"><a class="btn btn-default" href="allCourses.html" role="button">Courses &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/schedule.png" alt="Generic placeholder image"></center>
-                        <center><p>Here you can find our opening times</p></center>
-                        <p style="float:right"><a class="btn btn-default cursoreDisabilitato" href="#" role="button">Overall Schedule &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/ourinstructors.png" alt="Generic placeholder image"></center>
-                        <center><p>Discover our skilled instructors team</p></center>
-                        <p style="float:right"><a class="btn btn-default cursoreDisabilitato" href="#" role="button">Instructors &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                </div><!-- /.row -->
-                <br/>
-                <div class="row">
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/fees.png" alt="Generic placeholder image"></center>
-                        <center><p>Find the most suitable subscription</p></center>
-                        <p style="float:right"><a class="btn btn-default cursoreDisabilitato" href="#" role="button">FEEs and Registration &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/ask.png" alt="Generic placeholder image"></center>
-                        <center><p>If you have some doubts or demand, join this page</p></center>
-                        <p style="float:right"><a class="btn btn-default" href="form.html" role="button">Ask for Information &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                    <div class="col-sm-4" style="margin-bottom: 15px">
-                        <center><img class="img-column" src="img/home/resized/findus.png" alt="Generic placeholder image"></center>
-                        <center><p>Look at our position and note down our contacts</p></center>
-                        <p style="float:right"><a class="btn btn-default" href="location.html" role="button">Find and contact us &raquo;</a></p>
-                    </div><!-- /.col-sm-4 -->
-                </div><!-- /.row -->
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/logo_big_gym.png" alt="Generic placeholder image">
+                        <div class="caption">
+                            <p>Discover the main features of our gym</p>
+                            <p>
+                                <a href="#" class="btn btn-default cursoreDisabilitato">Our Gym &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/equipment.png" alt="Generic placeholder image">
+                        <div class="caption">
+                            <p>Look at our brand new machines</p>
+                            <p>
+                                <a href="#" class="btn btn-default cursoreDisabilitato">Equipment &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/testimonials.png" alt="Generic placeholder image">
+                        <div class="caption">
+                            <p>People's opinions about us</p>
+                            <p>
+                                <a href="#" class="btn btn-default cursoreDisabilitato">Testimonials &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            <!-- /.row -->
+            
+            <div class="row text-center">
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/courses.png" alt="Generic placeholder image">
+                        <div class="caption">
+                            <p>Take a look at the list of the offered courses</p>
+                            <p>
+                                <a href="allCourses.html" class="btn btn-default">Courses &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/schedule.png" alt="Generic placeholder image">
+                        <div class="caption">
+                            <p>Here you can find our opening times</p>
+                            <p>
+                                <a href="#" class="btn btn-default cursoreDisabilitato">Overall Schedule &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/ourinstructors.png" alt="Generic placeholder image">
+                        <div class="caption">
+                            <p>Discover our skilled instructors team</p>
+                            <p>
+                                <a href="#" class="btn btn-default cursoreDisabilitato">Instructors &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.row -->
+            
+            <div class="row text-center">
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/fees.png" alt="">
+                        <div class="caption">
+                            <p>Find the most suitable subscription</p>
+                            <p>
+                                <a href="#" class="btn btn-default cursoreDisabilitato">FEEs and Registration &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/ask.png" alt="">
+                        <div class="caption">
+                            <p>If you have some doubts or demand, join this page</p>
+                            <p>
+                                <a href="form.html" class="btn btn-default">Ask for Information &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 hero-feature">
+                    <div class="thumbnail">
+                        <img src="img/home/resized/findus.png" alt="">
+                        <div class="caption">
+                            <p>Look at our position and note down our contacts</p>
+                            <p>
+                                <a href="location.html" class="btn btn-default">Find and contact us &raquo;</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.row -->
 
             <!-- Back to top element -->
             <div id="toTop" class="backtotopdiv">
