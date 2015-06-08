@@ -5,6 +5,7 @@ function ready(){
     var id=1;
 
     var items = getNamedParameter('par');
+    items = unescape(items);
 
     $.ajax({
         //dataType: "json", //type of data
@@ -15,7 +16,7 @@ function ready(){
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
             var el ="";
-            
+            var el2="";
             $("title").html("Big Gym - Courses hold by "+courses[0].ifn);
             el+='<div class="row">';
             el+="<div class='col-sm-3'><h4>"+courses[0].ccfn+"</h4><img class='media-object rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div>";
@@ -31,9 +32,14 @@ function ready(){
             el+="</div>"; 
             el+="</div>";
 
+            el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+            el2+="<li><a href='instructor.html?par="+items+"'>"+items+"</a></li>";
+            el2+="<li class='active'>"+items+" - Teached Courses</li>";
+            el2+="</ol></div>";
 
 
             $("contenuto").html(el);     
+            $("breadcrumb").html(el2);
 
         },
         error: function(request,error) 

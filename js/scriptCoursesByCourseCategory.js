@@ -5,6 +5,7 @@ function ready(){
     var id=1;
 
     var items = getNamedParameter('par');
+    var items2 = unescape(getNamedParameter('par2'));
     items = unescape(items);
 
     $.ajax({
@@ -23,26 +24,39 @@ function ready(){
             el+="<div class='col-sm-9'>";
             for(var i = 0; i < courses.length; i++) {
                 if(courses[i].active == 1) {
-                    el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+items+"'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    if(items2=='allCourseCategories') {
+                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+items+"&par4=allCC'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    } else     {
+                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+items+"&par4=CC'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    }
                 } else {
                     el+="<li><a class = 'inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
 
                 }
+
+
             }
             el+="</div>"; 
             el+="</div>";
+            if(items2=='allCourseCategories') {
+                el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+                el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
+                el2+="<li class='active'>Courses - " + items + "</li>";
+                el2+="</ol></div>";
+            } else {
+                el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
+                el2+="<li><a href='courseCategory.html?par="+items+"'>"+items+"</a></li>";
+                el2+="<li class='active'>Courses - " + items + "</li>";
+                el2+="</ol></div>";
+            }
 
-            el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
-            el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-            el2+="<li class='active'>Courses - " + items + "</li>";
-            el2+="</ol></div>";
 
 
 
 
             $("contenuto").html(el);   
             $("breadcrumb").append(el2);
-            
+
 
         },
         error: function(request,error) 
