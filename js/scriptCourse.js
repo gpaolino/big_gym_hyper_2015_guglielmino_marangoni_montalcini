@@ -19,13 +19,14 @@ function ready(){
         url: "http://bgym.altervista.org/php/getAllCourses.php", //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
-            console.log(JSON.parse(response));
-            var courses=JSON.parse(response);
-            var column = 0; 
-            var oldCourseCat = -1; 
-            var el="";
-            var el2="";
             if(items2 == 'allCourses') {
+                console.log(JSON.parse(response));
+                var courses=JSON.parse(response);
+                var column = 0; 
+                var oldCourseCat = -1; 
+                var el="";
+                var el2="";
+
 
                 var previous = -1; 
                 var next = -1; 
@@ -94,12 +95,13 @@ function ready(){
         url: "http://www.bgym.altervista.org/php/getAllCoursesByLevel.php", //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
-            console.log(JSON.parse(response));
-            var courses=JSON.parse(response);
-            var level= -1; 
-            var el=""; 
-            var el2="";
             if(items2 == 'coursesByLevel') {
+                console.log(JSON.parse(response));
+                var courses=JSON.parse(response);
+                var level= -1; 
+                var el=""; 
+                var el2="";
+
 
 
 
@@ -171,13 +173,14 @@ function ready(){
         url: "http://www.bgym.altervista.org/php/getCoursesByCourseCategory.php?par="+items3, //Relative or absolute path to file.php file
         data: {course:id},
         success: function(response) {
-            console.log(JSON.parse(response));
-            var courses=JSON.parse(response);
-            var level= -1; 
-            var el=""; 
-            var el2="";
-
             if(items2 == 'coursesByCourseCategory') {
+                console.log(JSON.parse(response));
+                var courses=JSON.parse(response);
+                var level= -1; 
+                var el=""; 
+                var el2="";
+
+
 
                 var previous = -1; 
                 var next = -1; 
