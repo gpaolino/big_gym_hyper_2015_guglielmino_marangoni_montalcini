@@ -1,8 +1,5 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-//get all the course from db and reply using json structure
-
-//echo "I'm the php";
 
 //connection to db
 $mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
@@ -14,7 +11,7 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     $par = $_REQUEST['par'];
-    //echo "Successful connection"; // connection ok
+    
     # extract results mysqli_result::fetch_array
     $query = " SELECT course_cat.image as img, course.full_name as cfn, course.active, course.course_cat as cc, course_cat.full_name as ccfn FROM course_cat, course WHERE course_cat.id = course.course_cat AND course_cat.full_name = '".$par."' ORDER BY course.level, course.full_name ";
     //query execution

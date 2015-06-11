@@ -1,8 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-//get all the course from db and reply using json structure
 
-//echo "I'm the php";
 
 //connection to db
 $mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
@@ -17,7 +15,7 @@ else {
     $par2 = $_REQUEST['par2'];
     $value = 'courseCategory';
 
-    //echo "Successful connection"; // connection ok
+    
     # extract results mysqli_result::fetch_array
     if($par2 == $value) {
         $query = " SELECT photo_cc.full_name, photo_cc.img_red, photo_cc.img_full FROM photo_cc, course_cat WHERE photo_cc.course_cat = course_cat.id AND course_cat.full_name = '".$par."' ";

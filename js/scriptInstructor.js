@@ -14,15 +14,15 @@ function ready(){
         data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
-            var courses=JSON.parse(response);
+            var instructors=JSON.parse(response);
             var el =""; 
             var el2 ="";
             var loading_tweets ="";
-            $("title").html("Big Gym - "+courses[0].full_name);
-            el+="<div class='col-sm-10'><h1>"+courses[0].full_name+"</h1></div>"; 
-            el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+courses[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9' style='margin-top: 20px'><p><b>Age: </b>"+calculateAge(courses[0].birthdate)+"</p><p><b>Sex: </b>"+courses[0].sex+"</p><p><b>Height: </b>"+courses[0].height+" cm</p></div></div>";
-            el+="<div class='row' style='margin-top:20px'><div class='col-sm-10'><p><b>Bio:</b></p>"+courses[0].biography +"</div></div>"; 
-            el+="<div class='row' style='margin-top:20px'><div class='col-sm-10'>"+courses[0].prizes_awards +"</div></div>"; 
+            $("title").html("Big Gym - "+instructors[0].full_name);
+            el+="<div class='col-sm-10'><h1>"+instructors[0].full_name+"</h1></div>"; 
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-3'><img class='img-column2 rounded-img' src='"+instructors[0].image+"' alt='Generic placeholder image'></div><div class='col-sm-9' style='margin-top: 20px'><p><b>Age: </b>"+calculateAge(instructors[0].birthdate)+"</p><p><b>Sex: </b>"+instructors[0].sex+"</p><p><b>Height: </b>"+instructors[0].height+" cm</p></div></div>";
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-10'><p><b>Bio:</b></p>"+instructors[0].biography +"</div></div>"; 
+            el+="<div class='row' style='margin-top:20px'><div class='col-sm-10'>"+instructors[0].prizes_awards +"</div></div>"; 
             $("contenuto").html(el);     
 
             el2+="<a href='#' class='list-group-item active'>Presentation</a>";
@@ -30,7 +30,7 @@ function ready(){
             el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
 
             $("connessioni").html(el2);
-            
+
             loading_tweets+="<h3><span class='glyphicon glyphicon-comment' aria-hidden='true'></span><span style='margin-left:10px'>Latest Tweets</span></h3><p>Loading tweets...</p>";
             $("tweets").html(loading_tweets);
 

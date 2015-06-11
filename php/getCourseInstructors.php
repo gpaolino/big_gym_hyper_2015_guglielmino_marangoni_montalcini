@@ -1,8 +1,5 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-//get all the course from db and reply using json structure
-
-//echo "I'm the php";
 
 //connection to db
 $mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
@@ -14,7 +11,7 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     $par = $_REQUEST['par'];
-    //echo "Successful connection"; // connection ok
+    
     # extract results mysqli_result::fetch_array
     $query = " SELECT instructor.full_name, instructor.active FROM course, instructor, teach WHERE course.id = teach.course_id AND instructor.id = teach.instr_id AND course.full_name = '".$par."'";
     //query execution
