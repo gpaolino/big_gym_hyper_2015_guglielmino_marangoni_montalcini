@@ -10,8 +10,7 @@ function ready(){
     var items3 = getNamedParameter('par3');
     items3 = unescape(items3);
     items4= unescape(getNamedParameter('par4'));
-
-
+    
 
     $.ajax({
         method: "POST",
@@ -221,9 +220,9 @@ function ready(){
 
 
 
-                el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
+                el+="<a href='course.html?par="+courses[previous].cfn+"&par2="+items2+"&par3="+items3+"&par4="+items4+"'><span class='glyphicon glyphicon-backward' aria-hidden='true'></span> Prev</a>";
                 el+=" ("+courses[previous].ccfn+" courses) ";
-                el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>";
+                el+="<a href='course.html?par="+courses[next].cfn+"&par2="+items2+"&par3="+items3+"&par4="+items4+"'>Next <span class='glyphicon glyphicon-forward' aria-hidden='true'></span></a>"; 
                 if(items4=='allCC'){
                     el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                     el2+="<li><a href='coursesByCourseCategory.html?par="+items3+"&par2=allCourseCategories'>Courses - " +items3 +"</a></li>";
