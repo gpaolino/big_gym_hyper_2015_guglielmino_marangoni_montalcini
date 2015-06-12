@@ -9,7 +9,6 @@ function ready(){
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "http://bgym.altervista.org/php/getLocationInfo.php", //Relative or absolute path to file.php file
-        data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
             var info=JSON.parse(response);

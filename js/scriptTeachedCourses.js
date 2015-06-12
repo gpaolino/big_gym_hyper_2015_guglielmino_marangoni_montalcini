@@ -4,14 +4,14 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
 
-    var items = getNamedParameter('par');
-    items = unescape(items);
+    var name = unescape(getNamedParameter('par'));
 
     $.ajax({
+        method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://bgym.altervista.org/php/getTeachedCourses.php?par="+items,  //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://bgym.altervista.org/php/getTeachedCourses.php",  //Relative or absolute path to file.php file
+        data: {name:name},
         success: function(response) {
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
@@ -23,7 +23,7 @@ function ready(){
             el+="<div class='col-sm-9' style='margin-top:35px;'>";
             for(var i = 0; i < courses.length; i++) {
                 if(courses[i].active == 1) {
-                    el+="<li><a href='course.html?par="+courses[i].full_name+"&par2=coursesByCourseCategory&par3="+items+"'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
+                    el+="<li><a href='course.html?par="+courses[i].full_name+"&par3="+name+"'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
                 } else {
                     el+="<li><a class = 'inactiveLink' href='#'>"+courses[i].full_name+"<span class='sr-only'>(current)</span></a></li>";
 
@@ -33,8 +33,8 @@ function ready(){
             el+="</div>";
 
             el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
-            el2+="<li><a href='instructor.html?par="+items+"'>"+items+"</a></li>";
-            el2+="<li class='active'>"+items+" - Teached Courses</li>";
+            el2+="<li><a href='instructor.html?par="+name+"'>"+name+"</a></li>";
+            el2+="<li class='active'>"+name+" - Teached Courses</li>";
             el2+="</ol></div>";
 
 

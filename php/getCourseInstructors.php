@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 
+$par = $_POST['course_name'];
 //connection to db
 $mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
 
@@ -10,10 +11,10 @@ if (mysqli_connect_errno()) { //verify connection
     exit(); //do nothing else 
 }
 else {
-    $par = $_REQUEST['par'];
+   
     
     # extract results mysqli_result::fetch_array
-    $query = " SELECT instructor.full_name, instructor.active FROM course, instructor, teach WHERE course.id = teach.course_id AND instructor.id = teach.instr_id AND course.full_name = '".$par."'";
+    $query = " SELECT instructor.full_name, instructor.active FROM course, instructor, teach WHERE course.id = teach.course_id AND instructor.id = teach.instr_id AND course.full_name = '$par'";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available

@@ -4,14 +4,14 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
 
-    var items = getNamedParameter('par');
+    var name = unescape(getNamedParameter('par'));
 
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://bgym.altervista.org/php/getInstructor.php?par="+items, //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://bgym.altervista.org/php/getInstructor.php", //Relative or absolute path to file.php file
+        data: {name:name},
         success: function(response) {
             console.log(JSON.parse(response));
             var instructors=JSON.parse(response);
@@ -26,8 +26,8 @@ function ready(){
             $("contenuto").html(el);     
 
             el2+="<a href='#' class='list-group-item active'>Presentation</a>";
-            el2+="<a href='photoGallery.html?par="+items+"&par2=instructor' class='list-group-item'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
-            el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
+            el2+="<a href='photoGallery.html?par="+name+"&par2=instructor' class='list-group-item'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
+            el2+="<a href='teachedCourses.html?par="+name+"' class='list-group-item'>Teached Courses</a>";
 
             $("connessioni").html(el2);
 

@@ -4,15 +4,17 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
 
-    var items = getNamedParameter('par');
-    var items2 = unescape(getNamedParameter('par2'));
-    items = unescape(items);
+    var course_category = unescape(getNamedParameter('par'));
+    var from = unescape(getNamedParameter('par2'));
 
     $.ajax({
+        method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://bgym.altervista.org/php/getCoursesByCourseCategory.php?par="+items,  //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://bgym.altervista.org/php/getCoursesByCourseCategory.php",  //Relative or absolute path to file.php file
+        data: {
+            course_category: course_category
+        },
         success: function(response) {
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
@@ -24,10 +26,10 @@ function ready(){
             el+="<div class='col-sm-9'>";
             for(var i = 0; i < courses.length; i++) {
                 if(courses[i].active == 1) {
-                    if(items2=='allCourseCategories') {
-                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+items+"&par4=allCC'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                    if(from=='allCourseCategories') {
+                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+course_category+"&par4=allCC'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     } else     {
-                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+items+"&par4=CC'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
+                        el+="<li><a href='course.html?par="+courses[i].cfn+"&par2=coursesByCourseCategory&par3="+course_category+"&par4=CC'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
                     }
                 } else {
                     el+="<li><a class = 'inactiveLink' href='#'>"+courses[i].cfn+"<span class='sr-only'>(current)</span></a></li>";
@@ -38,15 +40,15 @@ function ready(){
             }
             el+="</div>"; 
             el+="</div>";
-            if(items2=='allCourseCategories') {
+            if(from=='allCourseCategories') {
                 el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                 el2+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-                el2+="<li class='active'>Courses - " + items + "</li>";
+                el2+="<li class='active'>Courses - " + course_category + "</li>";
                 el2+="</ol></div>";
             } else {
                 el2+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
-                el2+="<li><a href='courseCategory.html?par="+items+"'>"+items+"</a></li>";
-                el2+="<li class='active'>Courses - " + items + "</li>";
+                el2+="<li><a href='courseCategory.html?par="+course_category+"'>"+course_category+"</a></li>";
+                el2+="<li class='active'>Courses - " + course_category + "</li>";
                 el2+="</ol></div>";
             }
 

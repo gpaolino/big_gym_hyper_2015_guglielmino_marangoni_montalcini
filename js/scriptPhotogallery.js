@@ -4,20 +4,20 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
 
-    var items = getNamedParameter('par');
-    items = unescape(items);
-    var items2 = getNamedParameter('par2');
-    items2 = unescape(items2);
-
-
+    var name = unescape(getNamedParameter('par'));
+    var object = unescape(getNamedParameter('par2'));
+    
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://bgym.altervista.org/php/getPhotogallery.php?par="+items +"&par2="+items2, //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://bgym.altervista.org/php/getPhotogallery.php", //Relative or absolute path to file.php file
+        data: {
+            name:name, 
+            object: object
+        },
         success: function(response)  {
-            if(items2 == 'courseCategory') {
+            if(object == 'courseCategory') {
                 console.log(JSON.parse(response));
                 var photo=JSON.parse(response);
                 var el ="";
@@ -39,14 +39,14 @@ function ready(){
 
                 $("contenuto").html(el);  
 
-                el2+="<a href='courseCategory.html?par="+items+"' class='list-group-item'>"+items+" Description</a>";
-                el2+="<a href='courseCategoryHistory.html?par="+items+"' class='list-group-item'>History of "+items+"</a>";
-                el2+="<a href='#' class='list-group-item active'>"+items+" Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
-                el2+="<a href='coursesByCourseCategory.html?par="+items+"' class='list-group-item'>"+items+" Courses</a>";
+                el2+="<a href='courseCategory.html?par="+name+"' class='list-group-item'>"+name+" Description</a>";
+                el2+="<a href='courseCategoryHistory.html?par="+name+"' class='list-group-item'>History of "+name+"</a>";
+                el2+="<a href='#' class='list-group-item active'>"+name+" Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
+                el2+="<a href='coursesByCourseCategory.html?par="+name+"' class='list-group-item'>"+name+" Courses</a>";
 
                 el3+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
                 el3+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-                el3+="<li class='active'>"+items+" - Photogallery</li>";
+                el3+="<li class='active'>"+name+" - Photogallery</li>";
                 el3+="</ol></div>";
 
                 $("connessioni").html(el2);
@@ -75,9 +75,9 @@ function ready(){
 
                 $("contenuto").html(el);  
 
-                el2+="<a href='instructor.html?par="+items+"' class='list-group-item'>Presentation</a>";
+                el2+="<a href='instructor.html?par="+name+"' class='list-group-item'>Presentation</a>";
                 el2+="<a href='#' class='list-group-item active'>Photo-Gallery</a><ul style='list-style-type:none; padding:6px;'><li></li></ul>";
-                el2+="<a href='teachedCourses.html?par="+items+"' class='list-group-item'>Teached Courses</a>";
+                el2+="<a href='teachedCourses.html?par="+name+"' class='list-group-item'>Teached Courses</a>";
 
                 $("connessioni").html(el2);
             }

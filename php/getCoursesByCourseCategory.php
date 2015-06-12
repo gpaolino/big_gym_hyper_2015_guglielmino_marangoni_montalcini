@@ -1,6 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 
+$par = $_POST['course_category'];
 //connection to db
 $mysqli = new mysqli("localhost", "bgym", "", "my_bgym");
 
@@ -10,10 +11,8 @@ if (mysqli_connect_errno()) { //verify connection
     exit(); //do nothing else 
 }
 else {
-    $par = $_REQUEST['par'];
-    
     # extract results mysqli_result::fetch_array
-    $query = " SELECT course_cat.image as img, course.full_name as cfn, course.active, course.course_cat as cc, course_cat.full_name as ccfn FROM course_cat, course WHERE course_cat.id = course.course_cat AND course_cat.full_name = '".$par."' ORDER BY course.level, course.full_name ";
+    $query = " SELECT course_cat.image as img, course.full_name as cfn, course.active, course.course_cat as cc, course_cat.full_name as ccfn FROM course_cat, course WHERE course_cat.id = course.course_cat AND course_cat.full_name = '$par' ORDER BY course.level, course.full_name ";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available

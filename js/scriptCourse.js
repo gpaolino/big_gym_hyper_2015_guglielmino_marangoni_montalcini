@@ -4,12 +4,10 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
 
-    var items = getNamedParameter('par'); 
-    items = unescape(items); 
-    var items2 = getNamedParameter('par2'); 
-    var items3 = getNamedParameter('par3');
-    items3 = unescape(items3);
-    items4= unescape(getNamedParameter('par4'));
+    var items = unescape(getNamedParameter('par')); 
+    var items2 = unescape(getNamedParameter('par2')); 
+    var items3 = unescape(getNamedParameter('par3'));
+    var items4 = unescape(getNamedParameter('par4'));
     
 
     $.ajax({
@@ -17,7 +15,6 @@ function ready(){
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "http://bgym.altervista.org/php/getAllCourses.php", //Relative or absolute path to file.php file
-        data: {course:id},
         success: function(response) {
             if(items2 == 'allCourses') {
                 console.log(JSON.parse(response));
@@ -92,7 +89,6 @@ function ready(){
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "http://www.bgym.altervista.org/php/getAllCoursesByLevel.php", //Relative or absolute path to file.php file
-        data: {course:id},
         success: function(response) {
             if(items2 == 'coursesByLevel') {
                 console.log(JSON.parse(response));
@@ -169,8 +165,8 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://www.bgym.altervista.org/php/getCoursesByCourseCategory.php?par="+items3, //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://www.bgym.altervista.org/php/getCoursesByCourseCategory.php", //Relative or absolute path to file.php file
+        data: {course_category:items3},
         success: function(response) {
             if(items2 == 'coursesByCourseCategory') {
                 console.log(JSON.parse(response));
@@ -251,8 +247,8 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://www.bgym.altervista.org/php/getCourse.php?par="+items, //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://www.bgym.altervista.org/php/getCourse.php", //Relative or absolute path to file.php file
+        data: {course_name:items},
         success: function(response) {
             console.log(JSON.parse(response));
             var courses=JSON.parse(response);
@@ -276,8 +272,8 @@ function ready(){
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://www.bgym.altervista.org/php/getCourseInstructors.php?par="+items, //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://www.bgym.altervista.org/php/getCourseInstructors.php", //Relative or absolute path to file.php file
+        data: {course_name:items},
         success: function(response) {
             console.log(JSON.parse(response));
             var instructors=JSON.parse(response);

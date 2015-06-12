@@ -4,15 +4,14 @@ function ready(){
     console.log("I'm ready!");
     var id=1;
 
-    var items = getNamedParameter('par');
-    items = unescape(items);
+    var course_category = unescape(getNamedParameter('par'));
 
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://bgym.altervista.org/php/getCourseCategory.php?par="+items, //Relative or absolute path to file.php file
-        data: {course:id},
+        url: "http://bgym.altervista.org/php/getCourseCategory.php", //Relative or absolute path to file.php file
+        data: {course_category:course_category},
         success: function(response) {
             console.log(JSON.parse(response));
             var courseCategories=JSON.parse(response);
@@ -34,7 +33,7 @@ function ready(){
 
             el3+="<div class='breadcrumbsdiv'><ol class='breadcrumb'>";
             el3+="<li><a href='courseCategories.html'>Course Categories</a></li>";
-            el3+="<li class='active'>"+items+" - Description</li>";
+            el3+="<li class='active'>"+course_category+" - Description</li>";
             el3+="</ol></div>";
 
 
@@ -56,7 +55,6 @@ function ready(){
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "http://bgym.altervista.org/php/getAllCourseCategories.php", //Relative or absolute path to file.php file
-        data: {course:id},
         success: function(response) {
             console.log(JSON.parse(response));
             var courseCategories=JSON.parse(response);
@@ -65,7 +63,7 @@ function ready(){
             var previous = -1; 
             var next = -1; 
             for(var i = 0; i < courseCategories.length; i ++) {
-                if(courseCategories[i].full_name == items) {
+                if(courseCategories[i].full_name == course_category) {
                     for(j = i+1; j < courseCategories.length; j++) {
                         if(courseCategories[j].active == 1) {
                             next = j; 
